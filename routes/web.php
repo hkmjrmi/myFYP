@@ -88,6 +88,8 @@ Route::prefix('supervisor')->name('supervisor.')->group(function(){
 
     Route::middleware(['auth:supervisor','PreventBackHistory'])->group(function(){
          Route::view('/home','dashboard.supervisor.home')->name('home');
+         Route::view('/supervisees','dashboard.supervisor.supervisees')->name('supervisees');
+         Route::view('/progress','dashboard.supervisor.progress')->name('progress');
          Route::view('/forms','dashboard.supervisor.forms')->name('forms');
          Route::post('logout',[SupervisorController::class,'logout'])->name('logout');
     });
@@ -105,6 +107,8 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
 
     Route::middleware(['auth:lecturer','PreventBackHistory'])->group(function(){
          Route::view('/home','dashboard.lecturer.home')->name('home');
+         Route::view('/class','dashboard.lecturer.class')->name('class');
+         Route::view('/assignments','dashboard.lecturer.assignments')->name('assignments');
          Route::view('/forms','dashboard.lecturer.forms')->name('forms');
          Route::post('logout',[LecturerController::class,'logout'])->name('logout');
     });

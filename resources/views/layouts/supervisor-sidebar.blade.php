@@ -32,12 +32,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="assignments" class="nav-link">
-              <i class="nav-icon fa fa-tasks"></i>
-              <p>Assignment</p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="supervisees" class="nav-link">
               <i class="nav-icon fa fa-users"></i>
               <p>Supervisees</p>
