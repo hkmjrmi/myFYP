@@ -25,7 +25,14 @@ return [
         'driver'=>'eloquent',
         'model'=>App\Models\Student::class,
      ],
-     
+     'supervisor'=>[
+        'driver'=>'eloquent',
+        'model'=>App\Models\Supervisor::class,
+     ],
+     'lecturer'=>[
+        'driver'=>'eloquent',
+        'model'=>App\Models\Lecturer::class,
+     ],
 
     /*
     |--------------------------------------------------------------------------
@@ -62,6 +69,14 @@ return [
          'student'=>[
             'driver'=>'session',
             'provider'=>'students',
+         ],
+         'supervisor'=>[
+            'driver'=>'session',
+            'provider'=>'supervisors',
+         ],
+         'lecturer'=>[
+            'driver'=>'session',
+            'provider'=>'lecturers',
          ],
     ],
 
@@ -100,6 +115,14 @@ return [
             'driver'=>'eloquent',
             'model'=>App\Models\Student::class,
          ],
+         'supervisors'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Supervisor::class,
+         ],
+         'lecturers'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Lecturer::class,
+         ],
     
     ],
 
@@ -132,6 +155,14 @@ return [
         'students'=>[
             'driver'=>'eloquent',
             'model'=>App\Models\Student::class,
+        ],
+        'supervisors'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Supervisor::class,
+        ],
+        'lecturers'=>[
+            'driver'=>'eloquent',
+            'model'=>App\Models\Lecturer::class,
         ],
     ],
 

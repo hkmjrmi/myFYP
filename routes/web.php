@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\student\StudentController;
+use App\Http\Controllers\Student\StudentController;
+use App\Http\Controllers\Lecturer\LecturerController;
+use App\Http\Controllers\Supervisor\SupervisorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +20,7 @@ use App\Http\Controllers\student\StudentController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
@@ -71,6 +73,40 @@ Route::prefix('student')->name('student.')->group(function(){
          Route::view('/supervisor','dashboard.student.supervisor')->name('supervisor');
          Route::view('/assignments','dashboard.student.assignments')->name('assignments');
          Route::post('logout',[StudentController::class,'logout'])->name('logout');
+    });
+
+});
+
+Route::prefix('supervisor')->name('supervisor.')->group(function(){
+
+    Route::middleware(['guest:supervisor','PreventBackHistory'])->group(function(){
+         Route::view('/login','dashboard.supervisor.login')->name('login');
+         Route::view('/register','dashboard.supervisor.register')->name('register');
+         Route::post('/create',[SupervisorController::class,'create'])->name('create');
+         Route::post('/check',[SupervisorController::class,'check'])->name('check');
+    });
+
+    Route::middleware(['auth:supervisor','PreventBackHistory'])->group(function(){
+         Route::view('/home','dashboard.supervisor.home')->name('home');
+         Route::view('/forms','dashboard.supervisor.forms')->name('forms');
+         Route::post('logout',[SupervisorController::class,'logout'])->name('logout');
+    });
+
+});
+
+Route::prefix('lecturer')->name('lecturer.')->group(function(){
+
+    Route::middleware(['guest:lecturer','PreventBackHistory'])->group(function(){
+         Route::view('/login','dashboard.lecturer.login')->name('login');
+         Route::view('/register','dashboard.lecturer.register')->name('register');
+         Route::post('/create',[LecturerController::class,'create'])->name('create');
+         Route::post('/check',[LecturerController::class,'check'])->name('check');
+    });
+
+    Route::middleware(['auth:lecturer','PreventBackHistory'])->group(function(){
+         Route::view('/home','dashboard.lecturer.home')->name('home');
+         Route::view('/forms','dashboard.lecturer.forms')->name('forms');
+         Route::post('logout',[LecturerController::class,'logout'])->name('logout');
     });
 
 });
