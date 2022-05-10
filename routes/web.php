@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Student\StudentController;
 use App\Http\Controllers\Lecturer\LecturerController;
@@ -114,3 +115,5 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
     });
 
 });
+
+Route::resource('assignments', AssignmentController::class);
