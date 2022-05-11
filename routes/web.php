@@ -1,6 +1,8 @@
 <?php
 
+use App\Exports\StudentExport;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\UserController;
@@ -54,6 +56,9 @@ Route::prefix('admin')->name('admin.')->group(function(){
 
     Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
         Route::view('/home','dashboard.admin.home')->name('home');
+        Route::get('importStudent', [StudentController::class, 'importExportView']);
+        Route::get('export', [StudentController::class, 'export'])->name('export');
+        Route::post('import', [StudentController::class, 'import'])->name('import');
         Route::post('/logout',[AdminController::class,'logout'])->name('logout');
     });
 
@@ -71,8 +76,10 @@ Route::prefix('student')->name('student.')->group(function(){
     Route::middleware(['auth:student','PreventBackHistory'])->group(function(){
          Route::view('/home','dashboard.student.home')->name('home');
          Route::view('/forms','dashboard.student.forms')->name('forms');
+         Route::view('/forms/f1','dashboard.student.f1')->name('f1');
          Route::view('/supervisor','dashboard.student.supervisor')->name('supervisor');
          Route::view('/assignments','dashboard.student.assignments')->name('assignments');
+         
          Route::post('logout',[StudentController::class,'logout'])->name('logout');
     });
 
@@ -117,3 +124,5 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
 });
 
 Route::resource('assignments', AssignmentController::class);
+
+

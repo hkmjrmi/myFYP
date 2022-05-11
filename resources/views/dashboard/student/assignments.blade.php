@@ -25,21 +25,22 @@
                             <td>Chapter 1:Introduction</td>
                             <td>Open</td>
                             <td>28/02/2022</td>
-                            <td><a href="#" class="btn btn-success"><i class="bi-eye"></i> View</a></td>
+                            <td><a href="#" class="btn btn-success"><i class="bi-eye"></i> View </a> <a href="#" class="btn btn-primary"><i class="bi-eye"></i> Submit</a></td>
+
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>Chapter 2:Literature Review</td>
                             <td>Open</td>
                             <td>28/02/2022</td>
-                            <td><a href="#" class="btn btn-success"><i class="bi-eye"></i> View</a></td>
+                            <td><a href="#" class="btn btn-success"><i class="bi-eye"></i> View </a> <a href="#" class="btn btn-primary"><i class="bi-eye"></i> Submit</a></td>
                         </tr>
                         <tr>
                             <td>3</td>
                             <td>Chapter 3:Methodology</td>
                             <td>Open</td>
                             <td>28/02/2022</td>
-                            <td><a href="#" class="btn btn-success"><i class="bi-eye"></i> View</a></td>
+                            <td><a href="#" class="btn btn-success"><i class="bi-eye"></i> View </a> <a href="#" class="btn btn-primary"><i class="bi-eye"></i> Submit</a></td>
                         </tr>
                     </tbody>
                 </table>

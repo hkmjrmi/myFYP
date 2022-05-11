@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Student;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
+use App\Exports\StudentExport;
 use App\Http\Controllers\Controller;
+use App\Imports\StudentImport;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
@@ -54,5 +57,28 @@ class StudentController extends Controller
     function logout(){
         Auth::guard('student')->logout();
         return redirect('/');
+    }
+
+    public function importExportView()
+    {
+       return view('import');
+    }
+     
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function export() 
+    {
+        return Excel::download(new StudentExport, 'users.xlsx');
+    }
+     
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function import() 
+    {
+        Excel::import(new StudentImport,request()->file('file'));
+             
+        return redirect()->back()->with('message', 'IT WORKS!');
     }
 }
