@@ -114,15 +114,16 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
     });
 
     Route::middleware(['auth:lecturer','PreventBackHistory'])->group(function(){
+         Route::resource('assignments', AssignmentController::class);
          Route::view('/home','dashboard.lecturer.home')->name('home');
          Route::view('/class','dashboard.lecturer.class')->name('class');
-         Route::view('/assignments','dashboard.lecturer.assignments')->name('assignments');
+         //Route::view('/assignments','dashboard.lecturer.assignments')->name('assignments');
          Route::view('/forms','dashboard.lecturer.forms')->name('forms');
          Route::post('logout',[LecturerController::class,'logout'])->name('logout');
     });
 
 });
 
-Route::resource('assignments', AssignmentController::class);
+
 
 

@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.lecturer-main')
 @section('content')
 
 <div class="row">
@@ -7,7 +7,7 @@
             <h2>Add New Assignment</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('assignments.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('lecturer.assignments.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -22,7 +22,7 @@
     </div>
 @endif
 
-<form action="{{ route('assignments.store') }}" method="POST">
+<form action="{{ route('lecturer.assignments.store') }}" method="POST">
     @csrf
 
      <div class="row">

@@ -47,7 +47,7 @@ class AssignmentController extends Controller
 
         Assignment::create($request->all());
 
-        return redirect()->route('assignments.index')->with('success','Assignment created successfully.');
+        return redirect()->route('lecturer.assignments.index')->with('success','Assignment created successfully.');
     }
 
     /**
@@ -89,7 +89,7 @@ class AssignmentController extends Controller
 
         $assignment->update($request->all());
 
-        return redirect()->route('assignments.index')->with('success','assignment updated successfully');
+        return redirect()->route('lecturer.assignments.index')->with('success','assignment updated successfully');
     }
 
     /**
@@ -102,7 +102,7 @@ class AssignmentController extends Controller
     {
         $assignment->delete();
 
-        return redirect()->route('assignments.index')
+        return redirect()->route('lecturer.assignments.index')
                         ->with('success','assignment deleted successfully');
     }
 }
