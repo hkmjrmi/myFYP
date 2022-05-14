@@ -78,8 +78,8 @@ Route::prefix('student')->name('student.')->group(function(){
          Route::view('/forms','dashboard.student.forms')->name('forms');
          Route::view('/forms/f1','dashboard.student.f1')->name('f1');
          Route::view('/supervisor','dashboard.student.supervisor')->name('supervisor');
-         Route::view('/assignments','dashboard.student.assignments')->name('assignments');
-         
+         //Route::view('/assignments','dashboard.student.assignments')->name('assignments');
+         Route::get('assignments',[AssignmentController::class, 'indexStudent']);
          Route::post('logout',[StudentController::class,'logout'])->name('logout');
     });
 

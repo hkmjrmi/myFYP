@@ -20,6 +20,14 @@ class AssignmentController extends Controller
         return view('assignments.index', compact('assignments'));
     }
 
+    public function indexStudent()
+    {
+        $assignments = Assignment::all();
+
+        return view('assignments.indexStudent', compact('assignments'));
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
