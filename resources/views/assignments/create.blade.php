@@ -29,17 +29,17 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="title" class="form-control" placeholder="Title">
+                <input type="text" name="name" class="form-control" placeholder="Name">
             </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-              <strong>Description:</strong>
-                <textarea class="form-control" style="height:150px" name="description" placeholder="Description"></textarea>
+                <strong>Status:</strong>
+                <input type="text" name="status" class="form-control" placeholder="Status">
+            </div>
+            <div class="form-group">
+                <strong>Deadline:</strong>
+                <input type="date" name="deadline" class="form-control" placeholder="Deadline">
             </div>
         </div>
-
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>

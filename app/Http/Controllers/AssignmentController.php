@@ -39,8 +39,10 @@ class AssignmentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'name' => 'required',
+            'status' => 'required',
+            'deadline' => 'required',
+
         ]);
 
         Assignment::create($request->all());
@@ -80,8 +82,9 @@ class AssignmentController extends Controller
     public function update(Request $request, Assignment $assignment)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
+            'name' => 'required',
+            'status' => 'required',
+            'deadline' => 'required',
         ]);
 
         $assignment->update($request->all());

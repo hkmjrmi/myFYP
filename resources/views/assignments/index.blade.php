@@ -22,14 +22,16 @@
                 <div class="table-responsive">
                     <table class="table table-bordered" width="100%" cellspacing="0">
                         <tr>
-                            <th>Title</th>
-                            <th>Description</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Deadline</th>
                             <th>Action</th>
                         </tr>
                         @foreach ($assignments as $assignment)
                         <tr>
-                            <td>{{ $assignment->title }}</td>
-                            <td>{{ $assignment->description }}</td>
+                            <td>{{ $assignment->name }}</td>
+                            <td>{{ $assignment->status }}</td>
+                            <td>{{ $assignment->deadline }}</td>
                             <td>
                                 <form action="{{ route('assignments.destroy',$assignment->id) }}" method="POST">
                                 <a class="btn btn-info" href="{{ route('assignments.show',$assignment->id) }}">Show</a>
