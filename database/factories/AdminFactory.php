@@ -22,9 +22,9 @@ class AdminFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
+            'name' => "admin",
             'phone' => $this->faker->phoneNumber(),
-            'email' => $this->faker->unique()->email(),
+            'email' => "admin@gmail.com",
             'password' => bcrypt('12345'),
         ];
     }
