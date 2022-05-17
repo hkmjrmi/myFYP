@@ -57,6 +57,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
         Route::view('/home','dashboard.admin.home')->name('home');
         Route::get('importStudent', [StudentController::class, 'importExportView']);
+        Route::get('importStudent', [StudentController::class, 'index']);
         Route::get('export', [StudentController::class, 'export'])->name('export');
         Route::post('import', [StudentController::class, 'import'])->name('import');
         Route::post('/logout',[AdminController::class,'logout'])->name('logout');

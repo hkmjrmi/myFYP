@@ -14,6 +14,13 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
+    public function index()
+    {
+        $students = Student::all();
+
+        return view('import', compact('students'));
+    }
+
     function create(Request $request){
           //Validate inputs
           $request->validate([
