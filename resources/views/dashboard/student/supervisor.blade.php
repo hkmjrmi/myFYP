@@ -15,8 +15,8 @@
                         <th>Email</th>
                     </tr>
                     <tr>
-                        <td>Prof. Dr. Liza</td>
-                        <td>prof.liza@uitm.edu.my</td>
+                        <td scope="row">{{ Auth::guard('student')->user()->supervisor->name }}</td>
+                            <td>{{ Auth::guard('student')->user()->supervisor->email }}</td>
                     </tr>
                 </table>
             </div>
