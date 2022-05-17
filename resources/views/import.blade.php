@@ -4,7 +4,7 @@
     <br>
     <div class="card bg-light mt-3">
         <div class="card-header">
-            <h2>Student Import Export</h2>
+            <h2 class="m-0 font-weight-bold text-primary">Student Import Export</h2>
         </div>
         @if(session()->has('message'))
             <div class="alert alert-success">
@@ -17,7 +17,7 @@
                 <input type="file" name="file" class="form-control">
                 <br>
                 <button class="btn btn-success">Import User Data</button>
-                {{-- <a class="btn btn-warning" href="{{ route('admin.export') }}">Export User Data</a>  --}} 
+                <a class="btn btn-warning" href="{{ route('admin.export') }}">Export User Data</a>
             </form>
         </div>
     </div>
