@@ -25,7 +25,7 @@ class StudentFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->email(),
             'supervisor_id' => $this->faker->numberBetween(1,5),
-            'password' => '12345',
+            'password' => bcrypt('12345'),
         ];
     }
 }

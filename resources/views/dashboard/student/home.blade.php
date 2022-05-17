@@ -13,10 +13,12 @@
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Supervisor Name</th>
                         </tr>
                         <tr>
                             <td scope="row">{{ Auth::guard('student')->user()->name }}</td>
                             <td>{{ Auth::guard('student')->user()->email }}</td>
+                            <td>{{ Auth::guard('student')->user()->supervisor->name }}</td>
                         </tr>
                     </table>
                 </div>

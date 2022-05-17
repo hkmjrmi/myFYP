@@ -24,7 +24,7 @@ class SupervisorFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->email(),
-            'password' => '12345',
+            'password' => bcrypt('12345'),
         ];
     }
 }
