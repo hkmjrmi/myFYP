@@ -16,11 +16,7 @@ class Supervisor extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -40,4 +36,9 @@ class Supervisor extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function student()
+    { 
+       return $this->hasMany(Student::class);
+    }
 }

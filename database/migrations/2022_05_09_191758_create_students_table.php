@@ -17,7 +17,11 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->unsignedBigInteger('supervisor_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
+            $table->foreign('supervisor_id')->on('supervisors')->references('id')
+                ->onDelete('CASCADE')
+                ->onUpdate('CASCADE');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
