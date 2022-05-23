@@ -97,7 +97,7 @@ class AssignmentController extends Controller
 
         $assignment->update($request->all());
 
-        return redirect()->route('lecturer.assignments.index')->with('success','assignment updated successfully');
+        return redirect()->route('lecturer.assignments.index')->with('success','Assignment updated successfully');
     }
 
     /**
@@ -111,6 +111,6 @@ class AssignmentController extends Controller
         $assignment->delete();
 
         return redirect()->route('lecturer.assignments.index')
-                        ->with('success','assignment deleted successfully');
+                        ->with('success','Assignment deleted successfully');
     }
 }
