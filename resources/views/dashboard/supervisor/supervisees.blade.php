@@ -13,10 +13,20 @@
                     <tr>
                         <th>No</th>
                         <th>Student Name</th>
-                        <th>Student ID</th>
-                        <th>Class</th>
-                        <th>Action</th>
+                        <th>Student Email</th>
+                        <th>Supervisor Name</th>
                     </tr>
+                    @foreach($students as $student)
+                    <tr>
+                        
+                        <td>{{ $student->id }}
+                        <td>{{ $student->name }}</td>
+                        <td>{{ $student->email }}</td>
+                        <td>{{ $student->supervisor->name }}</td>
+                        
+                    </tr>
+                    @endforeach
+                    <!--
                     <tr>
                         <td>1</td>
                         <td>Aruffin bin Abdul Salam</td>
@@ -31,6 +41,7 @@
                         <td>CS2306A</td>
                         <td><a href="#" class="btn btn-primary">View</a></td>
                     </tr>
+                    -->
                 </table>
             </div>
         </div>

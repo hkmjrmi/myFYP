@@ -97,7 +97,7 @@ Route::prefix('supervisor')->name('supervisor.')->group(function(){
 
     Route::middleware(['auth:supervisor','PreventBackHistory'])->group(function(){
          Route::view('/home','dashboard.supervisor.home')->name('home');
-         Route::view('/supervisees','dashboard.supervisor.supervisees')->name('supervisees');
+         Route::get('/supervisees',[SupervisorController::class,'view']);
          Route::view('/progress','dashboard.supervisor.progress')->name('progress');
          Route::view('/forms','dashboard.supervisor.forms')->name('forms');
          Route::post('logout',[SupervisorController::class,'logout'])->name('logout');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Supervisor;
 
+use App\Models\Student;
 use App\Models\Supervisor;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -50,10 +51,17 @@ class SupervisorController extends Controller
         }else{
           return redirect()->route('supervisor.login')->with('fail','Incorrect Credentials');
         }
-    }
+  }
 
   function logout(){
       Auth::guard('supervisor')->logout();
       return redirect('/');
-    }
+  }
+
+  public function view(){
+    $supervisor = Supervisor::all();
+    $students = Student::with('supervisor')->where('supervisor_id',1)->get();
+    return view('dashboard.supervisor.supervisees', compact('students'));
+  }
+
 }
