@@ -12,13 +12,19 @@
                     <table class="table table-bordered" width="100%" cellspacing="0">
                         <tr>
                             <th>Name</th>
+                            <th>Student ID</th>
                             <th>Email</th>
+                            <th>Project Title</th>
+                            <th>Lecturer Name</th>
                             <th>Supervisor Name</th>
                         </tr>
                         <tr>
                             <td scope="row">{{ Auth::guard('student')->user()->name }}</td>
+                            <td>{{ Auth::guard('student')->user()->student_id }}</td>
                             <td>{{ Auth::guard('student')->user()->email }}</td>
+                            <td>{{ Auth::guard('student')->user()->project }}</td>
                             <td>{{ Auth::guard('student')->user()->supervisor->name }}</td>
+                            <td>{{ Auth::guard('student')->user()->lecturer->name }}</td>
                         </tr>
                     </table>
                 </div>

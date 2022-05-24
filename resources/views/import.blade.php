@@ -26,14 +26,18 @@
             <th>No</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Password</th>
+            <th>Project Title</th>
+            <th>Supervisor Name</th>
+            <th>Lecturer Name</th>
         </tr>
         @foreach ($students as $student)
         <tr>
             <td>{{ $student->id }}</td>
             <td>{{ $student->name }}</td>
             <td>{{ $student->email }}</td>
-            <td>{{ $student->password }}</td>
+            <td>{{ $student->project }}</td>
+            <td>{{ $student->supervisor->name }}</td>
+            <td>{{ $student->lecturer->name }}</td>
         </tr>
         @endforeach
     </table>

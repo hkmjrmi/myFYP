@@ -38,9 +38,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="class" class="nav-link">
+            <a href="students" class="nav-link">
               <i class="nav-icon fa fa-users"></i>
-              <p>Class</p>
+              <p>Students</p>
             </a>
           </li>
           <li class="nav-item">

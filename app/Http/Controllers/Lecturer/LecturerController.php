@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Lecturer;
 
+use App\Models\Student;
 use App\Models\Lecturer;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -53,5 +54,12 @@ class LecturerController extends Controller
   function logout(){
       Auth::guard('lecturer')->logout();
       return redirect('/');
+  }
+
+  public function viewStudent(){
+    
+    $lecturer = Auth::user()->id;
+    $students = Student::with('lecturer')->where('lecturer_id',$lecturer)->get();
+    return view('dashboard.lecturer.students', compact('students'));
   }
 }

@@ -41,4 +41,10 @@ class Student extends Authenticatable
     {
         return $this->belongsTo(Supervisor::class);
     }
+
+    public function lecturer()
+    {
+        return $this->belongsTo(Lecturer::class);
+    }
+
 }

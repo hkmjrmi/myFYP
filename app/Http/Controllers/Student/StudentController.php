@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Exports\StudentExport;
 use App\Http\Controllers\Controller;
 use App\Imports\StudentImport;
+use App\Models\Lecturer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Facades\Excel;
@@ -25,6 +26,7 @@ class StudentController extends Controller
           //Validate inputs
           $request->validate([
              'name'=>'required',
+             'student_id' =>'required|unique:students',
              'email'=>'required|email|unique:students,email',
              'password'=>'required|min:5|max:30',
              'cpassword'=>'required|min:5|max:30|same:password'
@@ -32,6 +34,7 @@ class StudentController extends Controller
 
           $student = new student();
           $student->name = $request->name;
+          $student->student_id = $request->student_id;
           $student->email = $request->email;
           $student->password = Hash::make($request->password);
           $save = $student->save();
@@ -88,4 +91,5 @@ class StudentController extends Controller
              
         return redirect()->back()->with('message', 'Data Successfully Imported!');
     }
+
 }
