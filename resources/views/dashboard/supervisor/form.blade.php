@@ -15,6 +15,7 @@
                         <th>Student Name</th>
                         <th>Student ID</th>
                         <th>Student Email</th>
+                        <th>Action</th>
                     </tr>
                     @foreach($students as $student)
                     <tr>
@@ -22,6 +23,7 @@
                         <td>{{ $student->name }}</td>
                         <td>{{ $student->id }}
                         <td>{{ $student->email }}</td>
+                        <td><a href="{{ url('supervisor/form', $student->id) }}" class="btn btn-info">View</a></td>
                     </tr>
                     @endforeach
                 </table>

@@ -54,7 +54,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
           Route::post('/check',[AdminController::class,'check'])->name('check');
     });
 
-    Route::middleware(['auth:admin','PreventBackHistory'])->group(function(){
+    Route::middleware(['auth:admin'])->group(function(){
         Route::view('/home','dashboard.admin.home')->name('home');
         Route::get('importStudent', [StudentController::class, 'importExportView']);
         Route::get('importStudent', [StudentController::class, 'index']);
@@ -98,6 +98,7 @@ Route::prefix('supervisor')->name('supervisor.')->group(function(){
     Route::middleware(['auth:supervisor','PreventBackHistory'])->group(function(){
          Route::view('/home','dashboard.supervisor.home')->name('home');
          Route::get('/supervisees',[SupervisorController::class,'view']);
+         Route::get('/form',[SupervisorController::class,'form']);
          Route::view('/progress','dashboard.supervisor.progress')->name('progress');
          Route::view('/forms','dashboard.supervisor.forms')->name('forms');
          Route::post('logout',[SupervisorController::class,'logout'])->name('logout');
@@ -124,7 +125,6 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
     });
 
 });
-
 
 
 

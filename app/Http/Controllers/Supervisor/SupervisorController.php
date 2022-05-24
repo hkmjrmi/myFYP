@@ -65,4 +65,10 @@ class SupervisorController extends Controller
     return view('dashboard.supervisor.supervisees', compact('students'));
   }
 
+  public function form(){
+    $supervisor = Auth::user()->id;
+    $students = Student::with('supervisor')->where('supervisor_id',$supervisor)->get();
+    return view('dashboard.supervisor.form', compact('students'));
+  }
+
 }

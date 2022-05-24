@@ -76,7 +76,7 @@ class StudentController extends Controller
     */
     public function export() 
     {
-        return Excel::download(new StudentExport, 'users.xlsx');
+        return Excel::download(new StudentExport, 'students.csv');
     }
      
     /**
