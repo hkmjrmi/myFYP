@@ -108,4 +108,18 @@ class StudentController extends Controller
         return redirect()->back()->with('status','Student Updated Successfully');
     }
 
+    public function editF1($id)
+    {
+        $student = Student::find($id);
+        return view('dashboard.lecturer.f1-assessment', compact('student'));
+    }
+
+    public function updateF1(Request $request, $id)
+    {
+        $student = Student::find($id);
+        $student->project = $request->input('project');
+        $student->update();
+        return redirect()->back()->with('status','Student Updated Successfully');
+    }
+
 }

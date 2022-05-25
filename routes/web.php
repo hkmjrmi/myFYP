@@ -124,6 +124,9 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
          Route::view('/class','dashboard.lecturer.class')->name('class');
          //Route::view('/assignments','dashboard.lecturer.assignments')->name('assignments');
          Route::view('/forms','dashboard.lecturer.forms')->name('forms');
+         Route::get('/forms/f1',[LecturerController::class,'viewStudentF1']);
+         Route::get('/f1-assessment/{id}', [StudentController::class, 'editF1']);
+         Route::put('/update-f1/{id}', [StudentController::class, 'updateF1']);
          Route::post('logout',[LecturerController::class,'logout'])->name('logout');
     });
 

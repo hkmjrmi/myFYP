@@ -63,6 +63,15 @@ class LecturerController extends Controller
     return view('dashboard.lecturer.students', compact('students'));
   }
 
+  public function viewStudentF1(){
+    
+    $lecturer = Auth::user()->id;
+    $students = Student::with('lecturer')->where('lecturer_id',$lecturer)->get();
+    return view('dashboard.lecturer.f1', compact('students'));
+  }
+
+
+
   /*
   public function update(Request $request, Assignment $assignment)
     {
