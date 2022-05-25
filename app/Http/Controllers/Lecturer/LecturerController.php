@@ -62,4 +62,20 @@ class LecturerController extends Controller
     $students = Student::with('lecturer')->where('lecturer_id',$lecturer)->get();
     return view('dashboard.lecturer.students', compact('students'));
   }
+
+  /*
+  public function update(Request $request, Assignment $assignment)
+    {
+        $request->validate([
+            'name' => 'required',
+            'status' => 'required',
+            'deadline' => 'required',
+        ]);
+
+        $assignment->update($request->all());
+
+        return redirect()->route('lecturer.assignments.index')->with('success','Assignment updated successfully');
+    }
+    */
+
 }

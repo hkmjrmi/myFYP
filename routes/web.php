@@ -119,6 +119,8 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
          Route::resource('assignments', AssignmentController::class);
          Route::view('/home','dashboard.lecturer.home')->name('home');
          Route::get('/students',[LecturerController::class,'viewStudent']);
+         Route::get('/edit-student/{id}', [StudentController::class, 'edit']);
+         Route::put('/update-student/{id}', [StudentController::class, 'update']);
          Route::view('/class','dashboard.lecturer.class')->name('class');
          //Route::view('/assignments','dashboard.lecturer.assignments')->name('assignments');
          Route::view('/forms','dashboard.lecturer.forms')->name('forms');

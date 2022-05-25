@@ -16,6 +16,7 @@
                         <th>Student ID</th>
                         <th>Project Title</th>
                         <th>Supervisor Name</th>
+                        <th>Action</th>
                     </tr>
                     @foreach($students as $student)
                     <tr>
@@ -24,6 +25,7 @@
                         <td>{{ $student->student_id}}
                         <td>{{ $student->project }}</td>
                         <td>{{ $student->supervisor->name }}
+                        <td><a href="{{ url('lecturer/edit-student/'.$student->id) }}" class="btn btn-primary btn-sm">Edit</a></td>
                     </tr>
                     @endforeach
                 </table>

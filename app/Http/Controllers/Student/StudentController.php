@@ -92,4 +92,20 @@ class StudentController extends Controller
         return redirect()->back()->with('message', 'Data Successfully Imported!');
     }
 
+    public function edit($id)
+    {
+        $student = Student::find($id);
+        return view('dashboard.lecturer.edit', compact('student'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $student = Student::find($id);
+        $student->name = $request->input('name');
+        $student->email = $request->input('email');
+        $student->project = $request->input('project');
+        $student->update();
+        return redirect()->back()->with('status','Student Updated Successfully');
+    }
+
 }
