@@ -12,11 +12,17 @@
                 <table class="table table-bordered" width="100%" cellspacing="0">
                     <tr>
                         <th>Name</th>
+                        <th>ID</th>
                         <th>Email</th>
+                        <th>Contact No</th>
+                        <th>Office</th>
                     </tr>
                     <tr>
                         <td scope="row">{{ Auth::guard('student')->user()->supervisor->name }}</td>
-                            <td>{{ Auth::guard('student')->user()->supervisor->email }}</td>
+                        <td>{{ Auth::guard('student')->user()->supervisor->supervisor_id }}</td>
+                        <td>{{ Auth::guard('student')->user()->supervisor->email }}</td>
+                        <td>{{ Auth::guard('student')->user()->supervisor->phone }}</td>
+                        <td>{{ Auth::guard('student')->user()->supervisor->office }}</td>
                     </tr>
                 </table>
             </div>

@@ -22,8 +22,11 @@ class SupervisorFactory extends Factory
     public function definition()
     {
         return [
+            'supervisor_id' => $this->faker->unique()->numerify(),
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->email(),
+            'phone' => $this->faker->phoneNumber(),
+            'office' => $this->faker->company(),
             'password' => bcrypt('12345'),
         ];
     }
