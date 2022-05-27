@@ -15,6 +15,8 @@ class CreateAssignmentsTable extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('lecturer_id')->nullable();
+            $table->foreign('lecturer_id')->references('id')->on('lecturers')->onDelete('cascade');
             $table->string('name')->nullable();
             $table->string('status')->nullable();
             $table->dateTime('deadline')->nullable();

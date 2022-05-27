@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Assignment;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class AssignmentController extends Controller
 {
@@ -15,14 +16,17 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        $assignments = Assignment::all();
+        // $assignments = Assignment::all();
+        $lecturers = Auth::user()->id;
+        $assignments = Assignment::with('lecturers')->where('lecturer_id',$lecturers)->get();
 
         return view('assignments.index', compact('assignments'));
     }
 
     public function indexStudent()
     {
-        $assignments = Assignment::all();
+        $student = Auth::user()->lecturer_id;
+        $assignments = Assignment::with('lecturers')->where('lecturer_id',$student)->get();
 
         return view('assignments.indexStudent', compact('assignments'));
     }
@@ -47,13 +51,19 @@ class AssignmentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+
             'name' => 'required',
             'status' => 'required',
             'deadline' => 'required',
 
         ]);
 
-        Assignment::create($request->all());
+        $assignment = new Assignment();
+        $assignment->lecturer_id = Auth::user()->id;
+        $assignment->name = $request->name;
+        $assignment->status = $request->status;
+        $assignment->deadline = $request->deadline;
+        $assignment->save();
 
         return redirect()->route('lecturer.assignments.index')->with('success','Assignment created successfully.');
     }

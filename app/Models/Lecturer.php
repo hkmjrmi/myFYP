@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Student;
+use App\Models\Assignment;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class Lecturer extends Authenticatable
 {
@@ -16,11 +18,7 @@ class Lecturer extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -44,5 +42,10 @@ class Lecturer extends Authenticatable
     public function students()
     { 
        return $this->hasMany(Student::class);
+    }
+
+    public function assignments()
+    {
+        return $this->hasMany(Assignment::class);
     }
 }
