@@ -117,7 +117,7 @@ class StudentController extends Controller
     public function updateF1(Request $request, $id)
     {
         $student = Student::find($id);
-        $student->project = $request->input('project');
+        $student->f2 = $request->input('f2');
         $student->update();
         return redirect()->back()->with('status','Student Updated Successfully');
     }

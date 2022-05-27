@@ -30,7 +30,7 @@
                         <td>{{ $student->name }}</td>
                         <td>{{ $student->student_id}}</td>
                         <td>{{ $student->project }}</td>
-                        <td>0</td>
+                        <td>{{ $student->f2 }}</td>
                         <td><a href="{{ url('lecturer/f1-assessment/'.$student->id) }}" class="btn btn-primary btn-sm">Grade</a>
                             <a href="{{ $student->chapter1_url }}" class="btn btn-success btn-sm">View</a>
                         </td>

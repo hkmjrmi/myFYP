@@ -24,15 +24,15 @@
                             <input type="text" name="name" value="{{$student->name}}" class="form-control" disabled>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="">Student Email</label>
-                            <input type="text" name="email" value="{{$student->email}}" class="form-control" disabled>
+                            <label for="">Project Title</label>
+                            <input type="text" name="email" value="{{$student->project}}" class="form-control" disabled>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="">Project</label>
-                            <input type="text" name="project" value="{{$student->project}}" class="form-control">
+                            <label for="">F2</label>
+                            <input type="text" name="f2" value="{{$student->f2}}" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <button type="submit" class="btn btn-primary">Grade F1</button>
+                            <button type="submit" class="btn btn-primary">Grade F2</button>
                         </div>
                     </form>
                 </div>

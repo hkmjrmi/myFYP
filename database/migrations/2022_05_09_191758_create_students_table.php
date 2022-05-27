@@ -15,8 +15,8 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('student_id')->unique();
+            $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->unsignedBigInteger('supervisor_id')->nullable();
@@ -34,6 +34,10 @@ class CreateStudentsTable extends Migration
             $table->longText('chapter3_url');
             $table->longText('chapter4_url');
             $table->longText('chapter5_url');
+            $table->string('f2')->nullable()->default("Not Yet Marked");
+            $table->string('f3')->nullable()->default("Not Yet Marked");
+            $table->string('f4')->nullable()->default("Not Yet Marked");
+            $table->string('f5')->nullable()->default("Not Yet Marked");
             $table->rememberToken();
             $table->timestamps();
         });
