@@ -28,16 +28,17 @@ class CreateStudentsTable extends Migration
                 ->onDelete('CASCADE')
                 ->onUpdate('CASCADE');
             $table->string('password');
-            $table->string('project');
-            $table->longText('chapter1_url');
-            $table->longText('chapter2_url');
-            $table->longText('chapter3_url');
-            $table->longText('chapter4_url');
-            $table->longText('chapter5_url');
+            $table->string('project')->nullable();
+            $table->longText('chapter1_url')->nullable();
+            $table->longText('chapter2_url')->nullable();
+            $table->longText('chapter3_url')->nullable();
+            $table->longText('chapter4_url')->nullable();
+            $table->longText('chapter5_url')->nullable();
             $table->string('f2')->nullable()->default("Not Yet Marked");
             $table->string('f3')->nullable()->default("Not Yet Marked");
             $table->string('f4')->nullable()->default("Not Yet Marked");
             $table->string('f5')->nullable()->default("Not Yet Marked");
+            $table->string('f13')->nullable()->default("Not Yet Marked");
             $table->rememberToken();
             $table->timestamps();
         });

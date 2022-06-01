@@ -108,6 +108,7 @@ class StudentController extends Controller
         return redirect()->back()->with('status','Student Updated Successfully');
     }
 
+    // Form F1
     public function editF1($id)
     {
         $student = Student::find($id);
@@ -121,5 +122,66 @@ class StudentController extends Controller
         $student->update();
         return redirect()->back()->with('status','Student Updated Successfully');
     }
+
+    // Form F2
+    public function editF2($id)
+    {
+        $student = Student::find($id);
+        return view('dashboard.lecturer.f2-assessment', compact('student'));
+    }
+
+    public function updateF2(Request $request, $id)
+    {
+        $student = Student::find($id);
+        $student->f2 = $request->input('f2');
+        $student->update();
+        return redirect()->back()->with('status','Student Updated Successfully');
+    }
+
+    // Form F3
+    public function editF3($id)
+    {
+        $student = Student::find($id);
+        return view('dashboard.lecturer.f3-assessment', compact('student'));
+    }
+
+    public function updateF3(Request $request, $id)
+    {
+        $student = Student::find($id);
+        $student->f3 = $request->input('f3');
+        $student->update();
+        return redirect()->back()->with('status','Student Updated Successfully');
+    }
+
+    // Form F4
+    public function editF4($id)
+    {
+        $student = Student::find($id);
+        return view('dashboard.lecturer.f4-assessment', compact('student'));
+    }
+
+    public function updateF4(Request $request, $id)
+    {
+        $student = Student::find($id);
+        $student->f4 = $request->input('f4');
+        $student->update();
+        return redirect()->back()->with('status','Student Updated Successfully');
+    }
+
+    // Form F13
+    public function editF13($id)
+    {
+        $student = Student::find($id);
+        return view('dashboard.lecturer.f4-assessment', compact('student'));
+    }
+
+    public function updateF13(Request $request, $id)
+    {
+        $student = Student::find($id);
+        $student->f13 = $request->input('f13');
+        $student->update();
+        return redirect()->back()->with('status','Student Updated Successfully');
+    }
+
 
 }

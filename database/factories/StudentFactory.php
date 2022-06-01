@@ -26,7 +26,7 @@ class StudentFactory extends Factory
             'email' => $this->faker->unique()->email(),
             'student_id' => $this->faker->unique()->numerify(),
             'supervisor_id' => $this->faker->numberBetween(1,5),
-            'lecturer_id' => $this->faker->numberBetween(1,5),
+            'lecturer_id' => 1,
             'project' => $this->faker->word(),
             'chapter1_url' => 'https://docs.google.com/document/d/14IEwB1qpxH2w0Mi221kW9SszOUpZg8kRFDB50d_8jlY/edit',
             'chapter2_url' => 'https://docs.google.com/document/d/1pMn59c2aVSwnWdj8UZYB48uOd1XVHhAhHUKEWbTimFM/edit',

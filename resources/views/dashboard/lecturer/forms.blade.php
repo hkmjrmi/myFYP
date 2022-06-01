@@ -20,6 +20,27 @@
                         <td>F1</td>
                         <td><a href="forms/f1">View</td>
                     </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>F2</td>
+                        <td><a href="forms/f2">View</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>F3</td>
+                        <td><a href="forms/f3">View</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>F4</td>
+                        <td><a href="forms/f4">View</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>F13</td>
+                        <td><a href="forms/f13">View</td>
+                    </tr>
+
                 </table>
             </div>
         </div>
