@@ -32,7 +32,7 @@
                         <td>{{ $student->project }}</td>
                         <td>{{ $student->f2 }}</td>
                         <td><a href="{{ url('lecturer/f1-assessment/'.$student->id) }}" class="btn btn-primary btn-sm">Grade</a>
-                            <a href="{{ $student->chapter1_url }}" class="btn btn-success btn-sm">View</a>
+                            <a href="{{ $student->chapter1_url }}" target="_blank" class="btn btn-success btn-sm">View</a>
                         </td>
                     </tr>
                     @endforeach
