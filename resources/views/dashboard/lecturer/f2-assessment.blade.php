@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>F2 - PROJECT MOTIVATION FORM</h4>
+                    <h4 class="m-0 font-weight-bold text-primary">F2 - PROJECT MOTIVATION FORM</h4>
                     <!--<a href="{{ url('lecturer/forms/f2') }}" class="btn btn-danger float-end">BACK</a>-->
                 </div>
                 <div class="card-body">
@@ -41,8 +41,8 @@
                         @endphp
                         <table class="table table-bordered">
                             <tr>
-                                <td>Assessment Criteria</td>
-                                <td>Weight</td>
+                                <th>Assessment Criteria</th>
+                                <th>Weight</th>
                             </tr>
                             <tr>
                                 <td>1. Problem identification (Identify problems/issues/opportunities)</td>

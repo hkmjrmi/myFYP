@@ -172,7 +172,7 @@ class StudentController extends Controller
     public function editF13($id)
     {
         $student = Student::find($id);
-        return view('dashboard.lecturer.f4-assessment', compact('student'));
+        return view('dashboard.lecturer.f13-assessment', compact('student'));
     }
 
     public function updateF13(Request $request, $id)

@@ -29,7 +29,7 @@
                         <a href="{{ $student->chapter2_url }}" class="btn btn-info">Chapter 2</a>
                         <a href="{{ $student->chapter3_url }}" class="btn btn-info">Chapter 3</a>
                         <a href="{{ $student->chapter4_url }}" class="btn btn-info">Chapter 4</a>
-                        <a href="{{ $student->chapter4_url }}" class="btn btn-info">Chapter 5</a></td>
+                        <a href="{{ $student->chapter5_url }}" class="btn btn-info">Chapter 5</a></td>
                     </tr>
                     @endforeach
                 </table>

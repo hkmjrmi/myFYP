@@ -11,8 +11,8 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h4>F1</h4>
-                    <a href="{{ url('lecturer/forms/f1') }}" class="btn btn-danger float-end">BACK</a>
+                    <h4 class="m-0 font-weight-bold text-primary">F1</h4>
+                    <!--<a href="{{ url('lecturer/forms/f1') }}" class="btn btn-danger float-end">BACK</a>-->
                 </div>
                 <div class="card-body">
                     <form action="{{ url('/lecturer/update-f1/'.$student->id) }}" method="POST">
