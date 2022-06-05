@@ -4,8 +4,8 @@
     <br>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ url()->previous() }}">Forms</a></li>
-          <li class="breadcrumb-item active" aria-current="page">F2</li>
+            <li class="breadcrumb-item"><a href="{{ url('lecturer/forms') }}">Forms</a></li>
+            <li class="breadcrumb-item active" aria-current="page">F2</li>
         </ol>
     </nav>
     <div class="card shadow mb-4">

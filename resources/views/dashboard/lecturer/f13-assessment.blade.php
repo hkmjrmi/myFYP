@@ -4,7 +4,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-
             @if (session('status'))
                 <h6 class="alert alert-success">{{ session('status') }}</h6>
             @endif

@@ -98,6 +98,8 @@ Route::prefix('supervisor')->name('supervisor.')->group(function(){
     Route::middleware(['auth:supervisor','PreventBackHistory'])->group(function(){
          Route::view('/home','dashboard.supervisor.home')->name('home');
          Route::get('/supervisees',[SupervisorController::class,'view']);
+         Route::get('/edit-supervisee/{id}', [StudentController::class, 'editSupervisee']);
+         Route::put('/update-supervisee/{id}', [StudentController::class, 'updateSupervisee']);
          Route::get('/form',[SupervisorController::class,'form']);
          Route::view('/progress','dashboard.supervisor.progress')->name('progress');
          Route::view('/forms','dashboard.supervisor.forms')->name('forms');
@@ -121,8 +123,6 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
          Route::get('/students',[LecturerController::class,'viewStudent']);
          Route::get('/edit-student/{id}', [StudentController::class, 'edit']);
          Route::put('/update-student/{id}', [StudentController::class, 'update']);
-         Route::view('/class','dashboard.lecturer.class')->name('class');
-         //Route::view('/assignments','dashboard.lecturer.assignments')->name('assignments');
          Route::view('/forms','dashboard.lecturer.forms')->name('forms');
          Route::get('/forms/f1',[LecturerController::class,'viewStudentF1']);
          Route::get('/f1-assessment/{id}', [StudentController::class, 'editF1']);

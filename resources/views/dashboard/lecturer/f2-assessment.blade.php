@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="m-0 font-weight-bold text-primary">F2 - PROJECT MOTIVATION FORM</h4>
-                    <!--<a href="{{ url('lecturer/forms/f2') }}" class="btn btn-danger float-end">BACK</a>-->
+                    <a href="{{ url('lecturer/forms/f2') }}" class="btn btn-danger float-end">BACK</a>             
                 </div>
                 <div class="card-body">
                     <form action="{{ url('/lecturer/update-f2/'.$student->id) }}" method="POST">
@@ -57,7 +57,6 @@
                                 <td>{{ $solution }}</td>
                             </tr>
                         </table>
-                        
                         <div class="form-group mb-3">
                             <label for="">Marks</label>
                             <input type="text" name="f2" value="{{$student->f2}}" class="form-control">

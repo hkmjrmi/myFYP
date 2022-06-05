@@ -17,6 +17,7 @@
                         <th>Email</th>
                         <th>Project Title</th>
                         <th>Progress</th>
+                        <th>Action</th>
                     </tr>
                     @foreach($students as $student)
                     <tr>
@@ -25,11 +26,12 @@
                         <td>{{ $student->student_id}}
                         <td>{{ $student->email }}</td>
                         <td>{{ $student->project }}</td>
-                        <td><a href="{{ $student->chapter1_url }}" class="btn btn-info">Chapter 1</a>
-                        <a href="{{ $student->chapter2_url }}" class="btn btn-info">Chapter 2</a>
-                        <a href="{{ $student->chapter3_url }}" class="btn btn-info">Chapter 3</a>
-                        <a href="{{ $student->chapter4_url }}" class="btn btn-info">Chapter 4</a>
-                        <a href="{{ $student->chapter5_url }}" class="btn btn-info">Chapter 5</a></td>
+                        <td><a href="{{ $student->chapter1_url }}" class="btn btn-success">1</a>
+                        <a href="{{ $student->chapter2_url }}" class="btn btn-success">2</a>
+                        <a href="{{ $student->chapter3_url }}" class="btn btn-success">3</a>
+                        <a href="{{ $student->chapter4_url }}" class="btn btn-success">4</a>
+                        <a href="{{ $student->chapter5_url }}" class="btn btn-success">5</a></td>
+                        <td><a href="{{ url('supervisor/edit-supervisee/'.$student->id) }}" class="btn btn-primary btn-sm">Edit</a></td>
                     </tr>
                     @endforeach
                 </table>

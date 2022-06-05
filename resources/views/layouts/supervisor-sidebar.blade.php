@@ -26,19 +26,19 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="home" class="nav-link">
+            <a href="{{ url('supervisor/home') }}" class="nav-link">
               <i class="nav-icon fa fa-home"></i>
               <p>Home</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="supervisees" class="nav-link">
+            <a href="{{ url('supervisor/supervisees') }}" class="nav-link">
               <i class="nav-icon fa fa-users"></i>
               <p>Supervisees</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="forms" class="nav-link">
+            <a href="{{ url('supervisor/forms') }}" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>Forms</p>
             </a>

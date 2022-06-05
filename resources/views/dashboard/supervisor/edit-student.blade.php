@@ -1,4 +1,4 @@
-@extends('layouts.lecturer-main')
+@extends('layouts.supervisor-main')
 @section('content')
 <div class="container">
     <div class="row">
@@ -11,10 +11,10 @@
             <div class="card">
                 <div class="card-header">
                     <h4>Edit & Update Student</h4>
-                        <a href="{{ url('lecturer/students') }}" class="btn btn-danger float-end">Back</a>
+                        <a href="{{ url('supervisor/supervisees') }}" class="btn btn-danger float-end">Back</a>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('/lecturer/update-student/'.$student->id) }}" method="POST">
+                    <form action="{{ url('/supervisor/update-supervisee/'.$student->id) }}" method="POST">
                         @csrf
                         @method('PUT')
 

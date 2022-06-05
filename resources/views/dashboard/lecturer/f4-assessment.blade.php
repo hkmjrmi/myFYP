@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="m-0 font-weight-bold text-primary">F4 - METHODOLOGY EVALUATION FORM</h4>
-                    <!--<a href="{{ url('lecturer/forms/f4') }}" class="btn btn-danger float-end">BACK</a>-->
+                    <a href="{{ url('lecturer/forms/f4') }}" class="btn btn-danger float-end">BACK</a>
                 </div>
                 <div class="card-body">
                     <form action="{{ url('/lecturer/update-f4/'.$student->id) }}" method="POST">
