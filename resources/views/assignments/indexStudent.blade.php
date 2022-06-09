@@ -15,12 +15,15 @@
                             <th>Name</th>
                             <th>Status</th>
                             <th>Deadline</th>
+                            <th>Action</th>
                         </tr>
                         @foreach ($assignments as $assignment)
                         <tr>
                             <td>{{ $assignment->name }}</td>
                             <td>{{ $assignment->status }}</td>
                             <td>{{ $assignment->deadline }}</td>
+                            <td><a href= {{url('/student/edit')  }}>Upload</a></td>
+                            
                         </tr>
                         @endforeach
                     </table>

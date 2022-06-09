@@ -75,6 +75,8 @@ Route::prefix('student')->name('student.')->group(function(){
     });
 
     Route::middleware(['auth:student','PreventBackHistory'])->group(function(){
+         Route::get('/edit',[StudentController::class,'editURL'])->name('edit');
+         Route::put('/update/{id}', [StudentController::class, 'updateURL']);
          Route::view('/home','dashboard.student.home')->name('home');
          Route::view('/forms','dashboard.student.forms')->name('forms');
          Route::view('/forms/f1','dashboard.student.f1')->name('f1');
