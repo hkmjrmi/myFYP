@@ -9,7 +9,8 @@
         <br>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0">
+                <table id="student" class="table table-bordered" width="100%" cellspacing="0">
+                    <thead>
                     <tr>
                         <th>No</th>
                         <th>Student Name</th>
@@ -18,6 +19,8 @@
                         <th>Supervisor Name</th>
                         <th>Action</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     @foreach($students as $student)
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</th>
@@ -28,6 +31,7 @@
                         <td><a href="{{ url('lecturer/edit-student/'.$student->id) }}" class="btn btn-primary btn-sm">Edit</a></td>
                     </tr>
                     @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>

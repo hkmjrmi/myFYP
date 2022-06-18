@@ -15,7 +15,8 @@
         <br>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0">
+                <table id="f2" class="table table-bordered" width="100%" cellspacing="0">
+                    <thead>
                     <tr>
                         <th>No</th>
                         <th>Student Name</th>
@@ -24,6 +25,8 @@
                         <th>Marks</th>
                         <th>Action</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     @foreach($students as $student)
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
@@ -36,6 +39,7 @@
                         </td>
                     </tr>
                     @endforeach
+                    </tbody>
                 </table>
             </div>
         </div>

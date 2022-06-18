@@ -21,26 +21,51 @@
             </form>
         </div>
     </div>
-    <table class="table table-bordered" width="100%" cellspacing="0">
-        <tr>
-            <th>No</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Project Title</th>
-            <th>Supervisor Name</th>
-            <th>Lecturer Name</th>
-        </tr>
-        @foreach ($students as $student)
-        <tr>
-            <td>{{ $student->id }}</td>
-            <td>{{ $student->name }}</td>
-            <td>{{ $student->email }}</td>
-            <td>{{ $student->project }}</td>
-            <td>{{ $student->supervisor->name }}</td>
-            <td>{{ $student->lecturer->name }}</td>
-        </tr>
-        @endforeach
-    </table>
+    <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">List of Students</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <table id="student" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Project Title</th>
+                <th>Supervisor Name</th>
+                <th>Lecturer Name</th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach ($students as $student)
+                <tr>
+                    <td>{{ $student->id }}</td>
+                    <td>{{ $student->name }}</td>
+                    <td>{{ $student->email }}</td>
+                    <td>{{ $student->project }}</td>
+                    <td>{{ $student->supervisor->name }}</td>
+                    <td>{{ $student->lecturer->name }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Project Title</th>
+                <th>Supervisor Name</th>
+                <th>Lecturer Name</th>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
 </div>
 @endsection
+
 
