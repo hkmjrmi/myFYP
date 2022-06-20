@@ -20,13 +20,16 @@
             
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" width="100%" cellspacing="0">
+                    <table id="assignment" class="table table-bordered" width="100%" cellspacing="0">
+                        <thead>
                         <tr>
                             <th>Name</th>
                             <th>Status</th>
                             <th>Deadline</th>
                             <th>Action</th>
                         </tr>
+                        </thead>
+                        <tbody>
                         @foreach ($assignments as $assignment)
                         <tr>
                             <td>{{ $assignment->name }}</td>
@@ -43,6 +46,7 @@
                             </td>
                         </tr>
                         @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

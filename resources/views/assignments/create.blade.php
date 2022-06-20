@@ -29,11 +29,21 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <select class="form-control" name="name" id="name">
+                    <option value="Chapter 1: Introduction" selected='selected'>Chapter 1: Introduction</option>
+                    <option value="Chapter 2: Literature Review">Chapter 2: Literature Review</option>
+                    <option value="Chapter 3: Methodology">Chapter 3: Methodology</option>
+                    <option value="Chapter 4: Finding">Chapter 4: Finding</option>
+                    <option value="Chapter 5: Conclusion">Chapter 5: Conclusion</option>
+
+                </select>
             </div>
             <div class="form-group">
                 <strong>Status:</strong>
-                <input type="text" name="status" class="form-control" placeholder="Status">
+                <select class="form-control" name="status" id="status">
+                    <option value="Open" selected='selected'>Open</option>
+                    <option value="Close">Close</option>
+                </select>
             </div>
             <div class="form-group">
                 <strong>Deadline:</strong>

@@ -118,6 +118,10 @@ $(document).ready(function() {
         ]
     } );
 } );
+
+$(document).ready(function(){
+    $('#assignment').DataTable();
+})
 </script>
 </body>
 </html>

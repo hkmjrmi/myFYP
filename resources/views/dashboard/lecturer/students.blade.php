@@ -13,8 +13,8 @@
                     <thead>
                     <tr>
                         <th>No</th>
-                        <th>Student Name</th>
-                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>ID</th>
                         <th>Project Title</th>
                         <th>Supervisor Name</th>
                         <th>Action</th>
