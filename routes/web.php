@@ -1,6 +1,7 @@
 <?php
 
 use App\Exports\StudentExport;
+use App\Http\Controllers\ActivityController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
@@ -28,6 +29,7 @@ Route::get('send-email', [SendEmailController::class, 'index']);
 Route::get('/', function () {
     return view('index');
 });
+
 
 Auth::routes();
 
@@ -78,6 +80,7 @@ Route::prefix('student')->name('student.')->group(function(){
     });
 
     Route::middleware(['auth:student','PreventBackHistory'])->group(function(){
+         Route::resource('activities', ActivityController::class);
          Route::get('/edit',[StudentController::class,'editURL'])->name('edit');
          Route::put('/update/{id}', [StudentController::class, 'updateURL']);
          Route::get('/send-email',[SendEmailController::class,'studentNotification']);
@@ -104,10 +107,12 @@ Route::prefix('supervisor')->name('supervisor.')->group(function(){
     Route::middleware(['auth:supervisor','PreventBackHistory'])->group(function(){
          Route::view('/home','dashboard.supervisor.home')->name('home');
          Route::get('/supervisees',[SupervisorController::class,'view']);
+         Route::get('activities/{id}',[ActivityController::class, 'indexSupervisor']);
          Route::get('/send-email/{id}',[SendEmailController::class,'supervisorNotification']);
          Route::get('/edit-supervisee/{id}', [StudentController::class, 'editSupervisee']);
          Route::put('/update-supervisee/{id}', [StudentController::class, 'updateSupervisee']);
          Route::get('/form',[SupervisorController::class,'form']);
+         //Route::get('activities',[ActivityController::class, 'indexSupervisor']);
          Route::view('/progress','dashboard.supervisor.progress')->name('progress');
          Route::view('/forms','dashboard.supervisor.forms')->name('forms');
          Route::post('logout',[SupervisorController::class,'logout'])->name('logout');

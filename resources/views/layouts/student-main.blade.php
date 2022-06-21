@@ -65,5 +65,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset('vendors/dist/js/adminlte.min.js')}}"></script>
 
+<script>
+  function uploadFunction() {
+    document.getElementById("send").disabled = false;
+  }
+</script>
 </body>
 </html>

@@ -34,6 +34,7 @@
                         <td>
                             <a href="{{ url('supervisor/edit-supervisee/'.$student->id)}}"><button class="btn btn-warning btn-sm">Edit</button></a>
                             <a href="{{ url('supervisor/send-email/'.$student->id) }}"><button class="btn btn-primary btn-sm">Send</button></a>
+                            <a href="{{ url('supervisor/activities/'.$student->id) }}"><button class="btn btn-primary btn-sm">Activity</button></a>
                         </td>
                     </tr>
                     @endforeach
