@@ -80,6 +80,7 @@ Route::prefix('student')->name('student.')->group(function(){
     Route::middleware(['auth:student','PreventBackHistory'])->group(function(){
          Route::get('/edit',[StudentController::class,'editURL'])->name('edit');
          Route::put('/update/{id}', [StudentController::class, 'updateURL']);
+         Route::get('/send-email',[SendEmailController::class,'studentNotification']);
          Route::view('/home','dashboard.student.home')->name('home');
          Route::view('/forms','dashboard.student.forms')->name('forms');
          Route::view('/forms/f1','dashboard.student.f1')->name('f1');
@@ -103,7 +104,7 @@ Route::prefix('supervisor')->name('supervisor.')->group(function(){
     Route::middleware(['auth:supervisor','PreventBackHistory'])->group(function(){
          Route::view('/home','dashboard.supervisor.home')->name('home');
          Route::get('/supervisees',[SupervisorController::class,'view']);
-         Route::get('/send-email/{id}',[SendEmailController::class,'sendEmail']);
+         Route::get('/send-email/{id}',[SendEmailController::class,'supervisorNotification']);
          Route::get('/edit-supervisee/{id}', [StudentController::class, 'editSupervisee']);
          Route::put('/update-supervisee/{id}', [StudentController::class, 'updateSupervisee']);
          Route::get('/form',[SupervisorController::class,'form']);

@@ -15,7 +15,7 @@
                             <th>Name</th>
                             <th>Status</th>
                             <th>Deadline</th>
-                            <th>Action</th>
+                            <th colspan="2">Action</th>
                         </tr>
                         @foreach ($assignments as $assignment)
                         <tr>
@@ -23,6 +23,7 @@
                             <td>{{ $assignment->status }}</td>
                             <td>{{ $assignment->deadline }}</td>
                             <td><a href= {{url('/student/edit')  }}>Upload</a></td>
+                            <td><a href="{{ url('student/send-email') }}"><button class="btn btn-primary btn-sm">Send</button></a><td>
                             
                         </tr>
                         @endforeach
