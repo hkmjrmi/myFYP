@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Laravel 8 Send Email Example</title>
+ <title>myFYP Management Notification</title>
 </head>
 <body>
  
- <h1>This is test mail from Tutsmake.com</h1>
- <p>Laravel 8 send email example</p>
+ <h1>This is test mail myFYP Management System</h1>
  
 </body>
 </html> 

@@ -31,7 +31,10 @@
                         <a href="{{ $student->chapter3_url }}" class="btn btn-success">3</a>
                         <a href="{{ $student->chapter4_url }}" class="btn btn-success">4</a>
                         <a href="{{ $student->chapter5_url }}" class="btn btn-success">5</a></td>
-                        <td><a href="{{ url('supervisor/edit-supervisee/'.$student->id) }}" class="btn btn-primary btn-sm">Edit</a></td>
+                        <td>
+                            <a href="{{ url('supervisor/edit-supervisee/'.$student->id)}}"><button class="btn btn-warning btn-sm">Edit</button></a>
+                            <a href="{{ url('supervisor/send-email/'.$student->id) }}"><button class="btn btn-primary btn-sm">Send</button></a>
+                        </td>
                     </tr>
                     @endforeach
                 </table>

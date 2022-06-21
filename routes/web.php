@@ -103,6 +103,7 @@ Route::prefix('supervisor')->name('supervisor.')->group(function(){
     Route::middleware(['auth:supervisor','PreventBackHistory'])->group(function(){
          Route::view('/home','dashboard.supervisor.home')->name('home');
          Route::get('/supervisees',[SupervisorController::class,'view']);
+         Route::get('/send-email/{id}',[SendEmailController::class,'sendEmail']);
          Route::get('/edit-supervisee/{id}', [StudentController::class, 'editSupervisee']);
          Route::put('/update-supervisee/{id}', [StudentController::class, 'updateSupervisee']);
          Route::get('/form',[SupervisorController::class,'form']);
