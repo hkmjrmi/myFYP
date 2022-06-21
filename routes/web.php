@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SendEmailController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\Admin\AdminController;
@@ -22,17 +23,7 @@ use App\Http\Controllers\Supervisor\SupervisorController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('send-mail', function () {
-   
-    $details = [
-        'title' => 'Mail from myFYP Management',
-        'body' => 'This is for testing email using smtp'
-    ];
-   
-    Mail::to('syukriishak622@gmail.com')->send(new \App\Mail\TestMail($details));
-   
-    dd("Email is Sent.");
-});
+Route::get('send-email', [SendEmailController::class, 'index']);
 
 Route::get('/', function () {
     return view('index');

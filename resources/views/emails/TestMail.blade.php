@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>myFYP Management System</title>
+ <title>Laravel 8 Send Email Example</title>
 </head>
 <body>
-    <h1>{{ $details['title'] }}</h1>
-    <p>{{ $details['body'] }}</p>
-   
-    <p>Thank you</p>
+ 
+ <h1>This is test mail from Tutsmake.com</h1>
+ <p>Laravel 8 send email example</p>
+ 
 </body>
-</html>
+</html> 
