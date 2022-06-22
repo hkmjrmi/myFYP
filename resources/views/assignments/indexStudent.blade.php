@@ -9,7 +9,7 @@
             <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ url('student/home') }}">Home</a></li>
-                <li class="breadcrumb-item active"><a href="{{ url('student/home') }}">Assignment</a></li>
+                <li class="breadcrumb-item">Assignment</li>
             </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
