@@ -9,8 +9,7 @@
              @endif
             <div class="card">
                 <div class="card-header">
-                    <h4 class="m-0 font-weight-bold text-primary">F2 - PROJECT MOTIVATION FORM</h4>
-                    <a href="{{ url('lecturer/forms/f2') }}" class="btn btn-danger float-end">BACK</a>             
+                    <h4 class="m-0 font-weight-bold text-primary">F2 - PROJECT MOTIVATION FORM</h4>            
                 </div>
                 <div class="card-body">
                     <form action="{{ url('/lecturer/update-f2/'.$student->id) }}" method="POST">
@@ -64,8 +63,11 @@
                             <label for="">Marks</label>
                             <input type="text" name="f2" value="{{$student->f2}}" class="form-control">
                         </div>
+                        <div class="float-right">
                         <div class="form-group mb-3">
+                            <a href="{{ url('lecturer/forms/f2') }}" class="btn btn-danger float-end">Back</a> 
                             <button type="submit" class="btn btn-primary">Grade F2</button>
+                        </div>
                         </div>
                     </form>
                 </div>

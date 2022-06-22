@@ -18,8 +18,8 @@ class CreateLecturersTable extends Migration
             $table->string('lecturer_id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('phone');
-            $table->string('office');
+            $table->string('phone')->default('Unavailable');
+            $table->string('office')->default('Unavailable');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

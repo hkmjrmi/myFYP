@@ -11,7 +11,6 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="m-0 font-weight-bold text-primary">F13 - LEAN CANVAS MODEL EVALUATION FORM</h4>
-                    <a href="{{ url('lecturer/forms/f13') }}" class="btn btn-danger float-end">BACK</a>
                 </div>
                 <div class="card-body">
                     <form action="{{ url('/lecturer/update-f13/'.$student->id) }}" method="POST">
@@ -97,8 +96,11 @@
                             <label for="">Marks</label>
                             <input type="text" name="f13" value="{{$student->f13}}" class="form-control">
                         </div>
-                        <div class="form-group mb-3">
-                            <button type="submit" class="btn btn-primary">Grade F13</button>
+                        <div class="float-right">
+                            <div class="form-group mb-3">
+                                <a href="{{ url('lecturer/forms/f13') }}" class="btn btn-danger float-end">Back</a> 
+                                <button type="submit" class="btn btn-primary">Grade F13</button>
+                            </div>
                         </div>
                     </form>
                 </div>

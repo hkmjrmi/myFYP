@@ -17,7 +17,7 @@
         <div class="card">
           <div class="card-body login-card-body">
             <div class="text-center">
-              <img src="{{ asset('vendors/dist/img/myFYPLogo.png') }}" alt="myFYP Logo" class="brand-image img-circle">
+              <a href="/"><img src="{{ asset('vendors/dist/img/myFYPLogo.png') }}" alt="myFYP Logo" class="brand-image img-circle"></a>
               <h1 class="text-dark">my<strong class="text-warning">FYP</strong></h1>
               <h4>Management System</h4>
             </div>

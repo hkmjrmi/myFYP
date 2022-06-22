@@ -12,7 +12,6 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="m-0 font-weight-bold text-primary">F4 - METHODOLOGY EVALUATION FORM</h4>
-                    <a href="{{ url('lecturer/forms/f4') }}" class="btn btn-danger float-end">BACK</a>
                 </div>
                 <div class="card-body">
                     <form action="{{ url('/lecturer/update-f4/'.$student->id) }}" method="POST">
@@ -70,8 +69,11 @@
                             <label for="">Marks</label>
                             <input type="text" name="f4" value="{{$student->f4}}" class="form-control">
                         </div>
-                        <div class="form-group mb-3">
-                            <button type="submit" class="btn btn-primary">Grade F4</button>
+                        <div class="float-right">
+                            <div class="form-group mb-3">
+                                <a href="{{ url('lecturer/forms/f4') }}" class="btn btn-danger float-end">Back</a> 
+                                <button type="submit" class="btn btn-primary">Grade F4</button>
+                            </div>
                         </div>
                     </form>
                 </div>

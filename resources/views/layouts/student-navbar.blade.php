@@ -11,7 +11,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('lecturer.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><form action="{{ route('lecturer.logout') }}" id="logout-form" method="post"><span class="text-danger ml-10">Log out  </span><i class="fas fa-sign-out-alt text-danger"></i>@csrf</form>
+        <a class="nav-link" href="{{ route('student.logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><form action="{{ route('student.logout') }}" id="logout-form" method="post"><span class="text-danger ml-10">Log out  </span><i class="fas fa-sign-out-alt text-danger"></i>@csrf</form>
         </a>
       </li>
       

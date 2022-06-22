@@ -6,11 +6,11 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h1 class="card-title m-0 font-weight-bold text-primary">Form List</h1>
+              <h1 class="m-0 font-weight-bold text-primary">Form List</h1>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="form-list" class="table table-bordered table-striped">
+              <table id="form-list" class="table table-bordered">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -40,13 +40,6 @@
                         <td><a href="forms/f13">View</td>
                     </tr>
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>No</th>
-                  <th>Name</th>
-                  <th>Action</th>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.card-body -->

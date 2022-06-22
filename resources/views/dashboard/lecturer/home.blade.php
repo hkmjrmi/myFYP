@@ -2,7 +2,56 @@
 @section('content')
     <div class="container-fluid">
         <br>
-        <div class="card shadow mb-4">
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                    <h3>Assignment<sup style="font-size: 20px"></sup></h3>
+            
+                    <p>List of Assignment</p>
+                    </div>
+                    <div class="icon">
+                    <br>
+                    <i class="ion-document-text"></i>
+                    </div>
+                    <a href="{{ url('lecturer/assignments') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>Student<sup style="font-size: 20px"></sup></h3>
+
+                    <p>List of Student</p>
+                </div>
+                <br>
+                <div class="icon">
+                    <i class="ion-ios-people"></i>
+                </div>
+                <a href="{{ url('lecturer/students') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                  <div class="inner">
+                    <h3>Forms</h3>
+    
+                    <p>List of Form</p>
+                  </div>
+                  <br>
+                  <div class="icon">
+                    <i class="ion-document"></i>
+                  </div>
+                  <a href="{{ url('lecturer/forms') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+              <!-- ./col -->
+            </div>
+        </div>
+        <div class="card">
             <div class="card-header py-3">
                 <h2 class="m-0 font-weight-bold text-primary">Lecturer Profile</h2>
             </div>

@@ -22,7 +22,10 @@ class LecturerController extends Controller
 
         $lecturer = new Lecturer();
         $lecturer->name = $request->name;
+        $lecturer->lecturer_id = $request->lecturer_id;
         $lecturer->email = $request->email;
+        $lecturer->phone = $request->default;
+        $lecturer->office = $request->default;
         $lecturer->password = Hash::make($request->password);
         $save = $lecturer->save();
 

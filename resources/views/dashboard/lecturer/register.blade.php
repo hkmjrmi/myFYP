@@ -31,6 +31,11 @@
                          <span class="text-danger">@error('name'){{ $message }}@enderror</span>
                      </div>
                      <div class="form-group">
+                        <label for="id">Lecturer ID</label>
+                        <input type="text" class="form-control" name="lecturer_id" placeholder="Enter lecturer id" value="{{ old('lecturer_id') }}">
+                        <span class="text-danger">@error('lecturer_id'){{ $message }}@enderror</span>
+                    </div>
+                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
                         <span class="text-danger">@error('email'){{ $message }}@enderror</span>

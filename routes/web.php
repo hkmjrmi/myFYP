@@ -108,6 +108,7 @@ Route::prefix('supervisor')->name('supervisor.')->group(function(){
          Route::view('/home','dashboard.supervisor.home')->name('home');
          Route::get('/supervisees',[SupervisorController::class,'view']);
          Route::get('activities/{id}',[ActivityController::class, 'indexSupervisor']);
+         Route::get('/progress/{id}',[StudentController::class, 'progress']);
          Route::get('/send-email/{id}',[SendEmailController::class,'supervisorNotification']);
          Route::get('/edit-supervisee/{id}', [StudentController::class, 'editSupervisee']);
          Route::put('/update-supervisee/{id}', [StudentController::class, 'updateSupervisee']);

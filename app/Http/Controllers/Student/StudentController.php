@@ -118,11 +118,18 @@ class StudentController extends Controller
         $student = Student::find($id);
         return view('dashboard.lecturer.edit', compact('student'));
     }
+    
 
     public function editSupervisee($id)
     {
         $student = Student::find($id);
         return view('dashboard.supervisor.edit-student', compact('student'));
+    }
+
+    public function progress($id)
+    {
+        $student = Student::find($id);
+        return view('dashboard.supervisor.progress', compact('student'));
     }
     
     public function updateSupervisee(Request $request, $id)

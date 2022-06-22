@@ -37,12 +37,6 @@
               <p>Supervisees</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="{{ url('supervisor/forms') }}" class="nav-link">
-              <i class="nav-icon fa fa-book"></i>
-              <p>Forms</p>
-            </a>
-          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
