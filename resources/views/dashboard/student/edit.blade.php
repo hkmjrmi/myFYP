@@ -10,9 +10,11 @@
             <br>
 
             <div class="card">
+                <h1>Upload Assignment</h1>
                 <div class="card-header">
-                    <h4>Edit & Update Student</h4>
+                    <div class="float-right">
                         <a href="{{ url('/student/home') }}" class="bi bi-box-arrow-in-left btn btn-danger float-end"><i class="fa fa-backward"></i> Back</a>
+                    </div>
                 </div>
                 <div class="card-body">
                     <form action="{{ url('/student/update/'.$student->id) }}" method="POST">

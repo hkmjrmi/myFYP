@@ -1,8 +1,24 @@
 @extends('layouts.student-main')
 @section('content')
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{ url('student/home') }}">Home</a></li>
+            <li class="breadcrumb-item active"><a href="{{ url('student/supervisor') }}">Supervisor</a></li>
+        </ol>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
 <div class="container-fluid">
     <br>
-    <div class="card shadow mb-4">
+    <div class="card">
         <div class="card-header py-3">
             <h2 class="m-0 font-weight-bold text-primary">Supervisor Info</h2>
         </div>
