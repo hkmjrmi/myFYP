@@ -2,32 +2,52 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\TestMail;
+
 use App\Models\Student;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class SendEmailController extends Controller
 {
-     public function supervisorNotification($id){
+     public function supervisorNotifyApproval($id){
 
           $student = Student::find($id);
+          $id = $student->id;
           $email = $student->email;
           $supervisor = $student->supervisor->name;
           
 
-          $body = "$supervisor have check your assignment!";
+          $body = "$supervisor have check your assignment and satisfy with your work! Your assignment are ready to be evaluate. ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
-              $message->from('myfypmanagement@gmail.com', 'MyFYP Management System');
+              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
               $message->to($email, '');
               $message->subject('myFYP Management Notification');
               
           });
 
-          return back();
+          return redirect()->back()->with('success','Email notification send successfully!');
+     }
+
+     public function supervisorNotifyDisapproval($id){
+
+          $student = Student::find($id);
+          $id = $student->id;
+          $email = $student->email;
+          $supervisor = $student->supervisor->name;
+          
+
+          $body = "$supervisor have check your assignment and feel you need to update your work! Please update your work and resubmit.  ";
+
+          Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
+              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->to($email, '');
+              $message->subject('myFYP Management Notification');
+              
+          });
+
+          return redirect()->back()->with('success','Email notification send successfully!');
      }
 
      public function studentNotification(){
@@ -42,12 +62,12 @@ class SendEmailController extends Controller
           $body = "Your supervisee, $name with Student ID $id  have submitted assignment! You can review the assignment on myFYP Management System Website!";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
-              $message->from('myfypmanagement@gmail.com', 'MyFYP Management System');
+              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
               $message->to($email, '');
               $message->subject('myFYP Management Notification');
               
           });
 
-          return back();
+          return redirect()->back()->with('success','Email notification send successfully!');
      }
 }

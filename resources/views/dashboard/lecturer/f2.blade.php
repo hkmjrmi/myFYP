@@ -6,7 +6,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h1 class="card-title m-0 font-weight-bold text-primary">Form List</h1>
+            <h1 class="card-title m-0 font-weight-bold text-primary">F2 - Student List</h1>
           </div>
           <!-- /.card-header -->
           <div class="card-body">

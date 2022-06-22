@@ -2,12 +2,11 @@
 @section('content')
     <div class="container-fluid">
         <br>
-        <div class="card shadow">
+        <div class="card">
             <div class="card-header py-3">
                 <h2 class="m-0 font-weight-bold text-primary">Activity List</h2>
             </div>
             <br>
-            
             <div class="card-body">
                 <div class="table-responsive">
                     <table id="assignment" class="table table-bordered" width="100%" cellspacing="0">
@@ -24,8 +23,6 @@
                             <td>{{ $activity->dateMeeting }}</td>
                             <td>{{ $activity->name }}</td>
                             <td>{{ $activity->comment }}</td>
-                            <td>
-                            </td>
                         </tr>
                         @endforeach
                         </tbody>

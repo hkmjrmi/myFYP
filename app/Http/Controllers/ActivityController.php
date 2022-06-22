@@ -30,7 +30,7 @@ class ActivityController extends Controller
         
         $student = Student::find($id);
         $id = $student->id;
-        $activity = Activity::with('students')->where('student_id',$student)->get();
+        $activity = Activity::with('students')->where('student_id',$id)->get();
 
         return view('activities.indexSupervisor', compact('activity'));
     }
@@ -101,14 +101,14 @@ class ActivityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Activity $Activity)
+    public function update(Request $request, Activity $activity)
     {
         $request->validate([
             'dateMeeting' => 'required',
             'name' => 'required',
         ]);
 
-        $Activity->update($request->all());
+        $activity->update($request->all());
 
         return redirect()->route('student.activities.index')->with('success','Activity updated successfully');
     }
