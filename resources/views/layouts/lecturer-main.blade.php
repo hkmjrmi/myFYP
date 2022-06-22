@@ -122,6 +122,12 @@ $(document).ready(function() {
 $(document).ready(function(){
     $('#assignment').DataTable();
 })
+
+$(document).ready(function(){
+    $('#form-list').DataTable();
+})
+
+
 </script>
 </body>
 </html>

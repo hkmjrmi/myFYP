@@ -1,21 +1,17 @@
 @extends('layouts.lecturer-main')
 @section('content')
-<div class="container-fluid">
-    <br>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ url('lecturer/forms') }}">Forms</a></li>
-            <li class="breadcrumb-item active" aria-current="page">F3</li>
-        </ol>
-    </nav>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h2 class="m-0 font-weight-bold text-primary">F3 - Students List</h2>
-        </div>
-        <br>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" width="100%" cellspacing="0">
+<!-- container-fluid -->
+<div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="card-title m-0 font-weight-bold text-primary">Form List</h1>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="f2" class="table table-bordered">
+                <thead>
                     <tr>
                         <th>No</th>
                         <th>Student Name</th>
@@ -24,6 +20,8 @@
                         <th>Marks</th>
                         <th>Action</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     @foreach($students as $student)
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
@@ -36,10 +34,27 @@
                         </td>
                     </tr>
                     @endforeach
-                </table>
-            </div>
+                    </tbody>
+              <tfoot>
+              <tr>
+                    <th>No</th>
+                    <th>Student Name</th>
+                    <th>Student ID</th>
+                    <th>Project Title</th>
+                    <th>Marks</th>
+                    <th>Action</th>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.card-body -->
         </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
     </div>
-</div>
+    <!-- /.row -->
+  </div>
+<!-- /.container-fluid -->
 @endsection
 

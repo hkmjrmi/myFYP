@@ -1,22 +1,17 @@
 @extends('layouts.lecturer-main')
 @section('content')
-<div class="container-fluid">
-    <br>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ url('lecturer/forms') }}">Forms</a></li>
-            <li class="breadcrumb-item active" aria-current="page">F2</li>
-        </ol>
-    </nav>
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h2 class="m-0 font-weight-bold text-primary">F2 - Students List</h2>
-        </div>
-        <br>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table id="f2" class="table table-bordered" width="100%" cellspacing="0">
-                    <thead>
+<!-- container-fluid -->
+<div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="card-title m-0 font-weight-bold text-primary">Form List</h1>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="f2" class="table table-bordered">
+                <thead>
                     <tr>
                         <th>No</th>
                         <th>Student Name</th>
@@ -35,15 +30,31 @@
                         <td>{{ $student->project }}</td>
                         <td>{{ $student->f2 }}</td>
                         <td><a href="{{ url('lecturer/f2-assessment/'.$student->id) }}" class="btn btn-primary btn-sm">Grade</a>
-                            <a href="{{ $student->chapter2_url }}" target="_blank" class="btn btn-success btn-sm">View</a>
+                            <a href="{{ $student->chapter1_url }}" target="_blank" class="btn btn-success btn-sm">View</a>
                         </td>
                     </tr>
                     @endforeach
                     </tbody>
-                </table>
-            </div>
+              <tfoot>
+              <tr>
+                    <th>No</th>
+                    <th>Student Name</th>
+                    <th>Student ID</th>
+                    <th>Project Title</th>
+                    <th>Marks</th>
+                    <th>Action</th>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+          <!-- /.card-body -->
         </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
     </div>
-</div>
+    <!-- /.row -->
+  </div>
+<!-- /.container-fluid -->
 @endsection
 
