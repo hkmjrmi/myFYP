@@ -53,7 +53,6 @@ class AssignmentController extends Controller
         $request->validate([
 
             'name' => 'required',
-            'status' => 'required',
             'deadline' => 'required',
 
         ]);
@@ -61,7 +60,6 @@ class AssignmentController extends Controller
         $assignment = new Assignment();
         $assignment->lecturer_id = Auth::user()->id;
         $assignment->name = $request->name;
-        $assignment->status = $request->status;
         $assignment->deadline = $request->deadline;
         $assignment->save();
 
@@ -100,8 +98,7 @@ class AssignmentController extends Controller
     public function update(Request $request, Assignment $assignment)
     {
         $request->validate([
-            'name' => 'required',
-            'status' => 'required',
+            
             'deadline' => 'required',
         ]);
 

@@ -1,5 +1,20 @@
 @extends('layouts.supervisor-main')
 @section('content')
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{ url('student/home') }}">Home</a></li>
+            <li class="breadcrumb-item">Supervisee List</li>
+        </ol>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
 <div class="container-fluid">
     <br>
     <div class="card">
@@ -30,7 +45,7 @@
                         <td>{{ $student->project }}</td>
                         <td>
                             <a href="{{ url('supervisor/progress/'.$student->id) }}"><button class="btn btn-success">Progress</button></a>
-                            <a href="{{ url('supervisor/activities/'.$student->id) }}"><button class="btn btn-info">Activity</button></a>
+                            <!--<a href="{{ url('supervisor/activities/'.$student->id) }}"><button class="btn btn-info">Activity</button></a>-->
                         </td>
                     </tr>
                     @endforeach

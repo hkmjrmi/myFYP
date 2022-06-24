@@ -35,7 +35,6 @@
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Status</th>
                             <th>Deadline</th>
                         </tr>
                         </thead>
@@ -43,7 +42,6 @@
                         @foreach ($assignments as $assignment)
                         <tr>
                             <td>{{ $assignment->name }}</td>
-                            <td>{{ $assignment->status }}</td>
                             <td>{{ $assignment->deadline }}</td>
                         </tr>
                         @endforeach

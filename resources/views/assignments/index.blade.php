@@ -1,5 +1,20 @@
 @extends('layouts.lecturer-main')
 @section('content')
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{ url('lecturer/home') }}">Home</a></li>
+            <li class="breadcrumb-item">Assignment</li>
+        </ol>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
     <div class="container-fluid">
         <br>
         <div class="card shadow">
@@ -14,7 +29,7 @@
                  <div class="alert alert-success">
                     <p>{{ $message }}</p>
                 </div>
-            @endif
+                  @endif
             </div>
             <br>
             
@@ -24,7 +39,6 @@
                         <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Status</th>
                             <th>Deadline</th>
                             <th>Action</th>
                         </tr>
@@ -33,12 +47,10 @@
                         @foreach ($assignments as $assignment)
                         <tr>
                             <td>{{ $assignment->name }}</td>
-                            <td>{{ $assignment->status }}</td>
                             <td>{{ $assignment->deadline }}</td>
                             <td>
                                 <form action="{{ route('lecturer.assignments.destroy',$assignment->id) }}" method="POST">
-                                <a class="btn btn-info" href="{{ route('lecturer.assignments.show',$assignment->id) }}">Show</a>
-                                <a class="btn btn-primary" href="{{ route('lecturer.assignments.edit',$assignment->id) }}">Edit</a>
+                                <a class="btn btn-warning" href="{{ route('lecturer.assignments.edit',$assignment->id) }}">Edit</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>

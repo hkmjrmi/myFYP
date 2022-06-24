@@ -69,6 +69,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script>
  $(document).ready(function() {
     $('#student').DataTable( {
+        pageLength : 5,
+        lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']],
         dom: 'Bfrtip',
         buttons: [
             {
@@ -95,7 +97,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
 } );
 
 $(document).ready(function() {
-    $('#f2').DataTable( {
+    $('#form').DataTable( {
+        dom: 'Bfrtip',
+        pageLength : 5,
+        lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']],
+        buttons: [
+            {
+                extend: 'copyHtml5',
+                exportOptions: {
+                    columns: [ 0, ':visible' ]
+                }
+            },
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [2, 4, ]
+                }
+            },
+            'colvis'
+        ]
+    } );
+} );
+
+$(document).ready(function() {
+    $('#f3').DataTable( {
         dom: 'Bfrtip',
         buttons: [
             {
@@ -121,6 +152,59 @@ $(document).ready(function() {
     } );
 } );
 
+$(document).ready(function() {
+    $('#f4').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copyHtml5',
+                exportOptions: {
+                    columns: [ 0, ':visible' ]
+                }
+            },
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [2, 4, ]
+                }
+            },
+            'colvis'
+        ]
+    } );
+} );
+
+$(document).ready(function() {
+    $('#f13').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copyHtml5',
+                exportOptions: {
+                    columns: [ 0, ':visible' ]
+                }
+            },
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: ':visible'
+                }
+            },
+            {
+                extend: 'pdfHtml5',
+                exportOptions: {
+                    columns: [2, 4, ]
+                }
+            },
+            'colvis'
+        ]
+    } );
+} );
 $(document).ready(function(){
     $('#assignment').DataTable();
 })
