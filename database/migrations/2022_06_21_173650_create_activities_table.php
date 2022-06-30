@@ -22,7 +22,7 @@ class CreateActivitiesTable extends Migration
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
             $table->unsignedBigInteger('supervisor_id')->nullable();
             $table->foreign('supervisor_id')->references('id')->on('supervisors')->onDelete('cascade');
-            $table->binary('signature')->nullable();
+            $table->string('signature')->default('unsigned');
             $table->timestamps();
         });
     }

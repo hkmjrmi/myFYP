@@ -35,6 +35,20 @@ class ActivityController extends Controller
         return view('activities.indexSupervisor', compact('activity'));
     }
 
+    public function editActivity($id)
+    {
+        $activity = Activity::find($id);
+        return view('dashboard.supervisor.edit-activity', compact('activity'));
+    }
+
+    public function updateActivity(Request $request, $id)
+    {
+        $activity = Activity::find($id);
+        $activity->signature = $request->input('signature');
+        $activity->update();
+        return redirect()->back()->with('status','Signature Signed!');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -30,8 +30,9 @@
                         <thead>
                         <tr>
                             <th>Date Meeting</th>
-                            <th>Name</th>
-                            <th>Comment</th>
+                            <th>Completed Activity</th>
+                            <th>Next Activity/Comment</th>
+                            <th>Signature</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -41,7 +42,8 @@
                             <td>{{ $activity->dateMeeting }}</td>
                             <td>{{ $activity->name }}</td>
                             <td>{{ $activity->comment }}</td>
-                            <td></td>
+                            <td>{{ $activity->signature }}</td>
+                            <td><a href="{{ url('supervisor/activities-supervisee/'.$activity->id) }}" class="btn btn-primary btn-sm">Sign</a></td>
                         </tr>
                         @endforeach
                         </tbody>
