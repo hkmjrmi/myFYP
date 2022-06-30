@@ -26,6 +26,7 @@
                             <th>Date Meeting</th>
                             <th>Name</th>
                             <th>Comment</th>
+                            <th>Signature</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -35,6 +36,7 @@
                             <td>{{ $activity->dateMeeting }}</td>
                             <td>{{ $activity->name }}</td>
                             <td>{{ $activity->comment }}</td>
+                            <td>{{ $activity->signature }}</td>
                             <td>
                                 <form action="{{ route('student.activities.destroy',$activity->id) }}" method="POST">
                                 <a class="btn btn-info" href="{{ route('student.activities.show',$activity->id) }}">Show</a>

@@ -47,4 +47,9 @@ class Student extends Authenticatable
         return $this->belongsTo(Lecturer::class);
     }
 
+    public function activities()
+    {
+        return $this->hasMany(Activity::class);
+    }
+
 }

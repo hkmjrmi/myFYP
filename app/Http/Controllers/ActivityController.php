@@ -63,6 +63,7 @@ class ActivityController extends Controller
 
         $activity = new Activity();
         $activity->student_id = Auth::user()->id;
+        $activity->supervisor_id = Auth::user()->supervisor_id;
         $activity->dateMeeting = $request->dateMeeting;
         $activity->name = $request->name;
         $activity->comment = $request->comment;

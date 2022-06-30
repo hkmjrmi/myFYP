@@ -41,4 +41,9 @@ class Supervisor extends Authenticatable
     { 
        return $this->hasMany(Student::class);
     }
+
+    public function activities()
+    {
+        return $this->hasMany(Activity::class);
+    }
 }

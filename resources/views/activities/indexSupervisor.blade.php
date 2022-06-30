@@ -26,12 +26,13 @@
             <br>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id="assignment" class="table table-bordered" width="100%" cellspacing="0">
+                    <table id="table" class="table table-bordered" width="100%" cellspacing="0">
                         <thead>
                         <tr>
                             <th>Date Meeting</th>
                             <th>Name</th>
                             <th>Comment</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -40,6 +41,7 @@
                             <td>{{ $activity->dateMeeting }}</td>
                             <td>{{ $activity->name }}</td>
                             <td>{{ $activity->comment }}</td>
+                            <td></td>
                         </tr>
                         @endforeach
                         </tbody>
