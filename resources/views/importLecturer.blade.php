@@ -4,7 +4,7 @@
     <br>
     <div class="card bg-light mt-3">
         <div class="card-header">
-            <h2 class="m-0 font-weight-bold text-primary">Student Import Export</h2>
+            <h2 class="m-0 font-weight-bold text-primary">Lecturer Import Export</h2>
         </div>
         @if(session()->has('message'))
             <div class="alert alert-success">
@@ -17,7 +17,7 @@
                 <input type="file" name="file" class="form-control">
                 <br>
                 <button class="btn btn-success">Import User Data</button>
-                <a class="btn btn-warning" href="{{ route('admin.export') }}">Export User Data</a>
+                <!--<a class="btn btn-warning" href="{{ route('admin.export') }}">Export User Data</a>-->
             </form>
         </div>
     </div>
@@ -31,28 +31,34 @@
             <tr>
                 <th>No</th>
                 <th>Name</th>
-                <th>Student ID</th>
+                <th>Lecturer ID</th>
                 <th>Email</th> 
-                <th>Password</th>
-                <th>Supervisor</th>
-                <th>Lecturer</th>
-                <th>Project</th>
+                <th>Phone</th>
+                <th>Office</th>
             </tr>
             </thead>
             <tbody>
-            @foreach ($students as $student)
-            <tr>
-                <td scope="row">{{ $loop->iteration }}</td>
-                <td>{{ $student->name }}</td>
-                <td>{{ $student->student_id }}</td>
-                <td>{{ $student->email }}</td>
-                <td>{{ $student->password }}</td>
-                <td>{{ $student->supervisor_id }}</td>
-                <td>{{ $student->lecturer_id }}</td>
-                <td>{{ $student->project }}</td>
-            </tr>
-            @endforeach
+                @foreach ($lecturers as $lecturer)
+                <tr>
+                    <td scope="row">{{ $loop->iteration }}</td>
+                    <td>{{ $lecturer->name }}</td>
+                    <td>{{ $lecturer->lecturer_id }}</td>
+                    <td>{{ $lecturer->email }}</td>
+                    <td>{{ $lecturer->phone }}</td>
+                    <td>{{ $lecturer->office }}</td>
+                </tr>
+                @endforeach
             </tbody>
+            <tfoot>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Lecturer ID</th>
+                <th>Email</th> 
+                <th>Phone</th>
+                <th>Office</th>
+            </tr>
+            </tfoot>
           </table>
         </div>
         <!-- /.card-body -->

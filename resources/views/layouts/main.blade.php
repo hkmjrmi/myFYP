@@ -68,10 +68,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('vendors/dist/js/adminlte.min.js')}}"></script>
 <script>
   $(function () {
-    $("#student").DataTable({
+    $("#table").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#student_wrapper .col-md-6:eq(0)');
+    }).buttons().container().appendTo('#table_wrapper .col-md-6:eq(0)');
   });
 </script>
 </body>

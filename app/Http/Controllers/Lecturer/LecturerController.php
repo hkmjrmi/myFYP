@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Lecturer;
 
 use App\Models\Student;
 use App\Models\Lecturer;
+use App\Models\Assignment;
 use Illuminate\Http\Request;
+use App\Imports\LecturersImport;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class LecturerController extends Controller
 {
@@ -101,6 +104,30 @@ class LecturerController extends Controller
     return view('dashboard.lecturer.f13', compact('students'));
   }
 
+    public function index()
+    {
+        $lecturers = Lecturer::all();
+
+        return view('importLecturer', compact('lecturers'));
+    }
+
+  /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function importExportView()
+    {
+       return view('importLecturer');
+    }
+     
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function import() 
+    {
+        Excel::import(new LecturersImport,request()->file('file'));
+             
+        return redirect()->back()->with('message', 'Data Successfully Imported!');
+    }
 
 
 
