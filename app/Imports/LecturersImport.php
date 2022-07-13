@@ -18,9 +18,14 @@ class LecturersImport implements ToModel
     public function model(array $row)
     {
         return new Lecturer([
+            'id' => $row[0],
             'name' => $row[1],
-            'email'=> $row[2], 
+            'lecturer_id' => $row[2],
+            'email'=> $row[3],
+            'phone' => $row[4],
+            'office' => $row[5],
             'password' => Hash::make($row[3]),
         ]);
     }
+    
 }
