@@ -194,7 +194,7 @@ class StudentController extends Controller
         $student = Student::find($id);
         $student->f3 = $request->input('f3');
         $student->update();
-        return redirect()->back()->with('status','Student Graded Successfully!');
+        return redirect()->route('lecturer.f3list')->with('status','Student Graded Successfully!');
     }
 
     // Form F4
@@ -209,7 +209,7 @@ class StudentController extends Controller
         $student = Student::find($id);
         $student->f4 = $request->input('f4');
         $student->update();
-        return redirect()->route('lecturer.home')->with('status','Student Graded Successfully!');
+        return redirect()->route('lecturer.f4list')->with('status','Student Graded Successfully!');
     }
 
     // Form F13
@@ -224,7 +224,7 @@ class StudentController extends Controller
         $student = Student::find($id);
         $student->f13 = $request->input('f13');
         $student->update();
-        return redirect()->back()->with('status','Student Graded Successfully!');
+        return redirect()->route('lecturer.f13list')->with('status','Student Graded Successfully!');
     }
 
 

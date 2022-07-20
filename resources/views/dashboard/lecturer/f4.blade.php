@@ -26,6 +26,9 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body">
+            @if (session('status'))
+              <h6 class="alert alert-success">{{ session('status') }}</h6>
+            @endif
             <table id="f4" class="table table-bordered">
                 <thead>
                     <tr>

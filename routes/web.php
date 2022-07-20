@@ -150,13 +150,13 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
          Route::get('/forms/f2',[LecturerController::class,'viewStudentF2'])->name('f2list');
          Route::get('/f2-assessment/{id}', [StudentController::class, 'editF2']);
          Route::put('/update-f2/{id}', [StudentController::class, 'updateF2']);
-         Route::get('/forms/f3',[LecturerController::class,'viewStudentF3']);
+         Route::get('/forms/f3',[LecturerController::class,'viewStudentF3'])->name('f3list');;
          Route::get('/f3-assessment/{id}', [StudentController::class, 'editF3']);
          Route::put('/update-f3/{id}', [StudentController::class, 'updateF3']);
-         Route::get('/forms/f4',[LecturerController::class,'viewStudentF4']);
+         Route::get('/forms/f4',[LecturerController::class,'viewStudentF4'])->name('f4list');;
          Route::get('/f4-assessment/{id}', [StudentController::class, 'editF4']);
          Route::put('/update-f4/{id}', [StudentController::class, 'updateF4']);
-         Route::get('/forms/f13',[LecturerController::class,'viewStudentF13']);
+         Route::get('/forms/f13',[LecturerController::class,'viewStudentF13'])->name('f13list');;
          Route::get('/f13-assessment/{id}', [StudentController::class, 'editF13']);
          Route::put('/update-f13/{id}', [StudentController::class, 'updateF13']);
          Route::post('logout',[LecturerController::class,'logout'])->name('logout');

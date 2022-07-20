@@ -13,7 +13,7 @@
                     <h4 class="m-0 font-weight-bold text-primary">F13 - LEAN CANVAS MODEL EVALUATION FORM</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('/lecturer/update-f13/'.$student->id) }}" method="POST">
+                    <form name="calculator" action="{{ url('/lecturer/update-f13/'.$student->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <table class="table table-bordered">
@@ -36,62 +36,73 @@
                                 <td colspan="3">{{ $student->project}}</td>
                             </tr>
                         </table>
-                        <br>
-                        @php
-                            $criteria1 = 2;
-                            $criteria2 = 1;
-                            $criteria3 = 1;
-                            $criteria4 = 1;
-                            $criteria5 = 1;
-                            $criteria6 = 1;
-                            $criteria7 = 1;
-                            $criteria8 = 1;
-                            $criteria9 = 1;
-                        @endphp
                         <table class="table table-bordered">
                             <tr>
                                 <th>Assessment Criteria</th>
                                 <th>Weight</th>
+                                <th>Score (1-10)</th>
+                                <th>Marks</th>
                             </tr>
                             <tr>
                                 <td>1. Problem</td>
-                                <td>{{ $criteria1 }}</td>
+                                <td><input type="text" name="weight1" value="2" disabled></td>
+                                <td><input type="text" name="score1"></td>
+                                <td><input type="text" name="marks1" disabled></td>
                             </tr>
                             <tr>
                                 <td>2. Solution</td>
-                                <td>{{ $criteria2 }}</td>
+                                <td><input type="text" name="weight2" value="1" disabled></td>
+                                <td><input type="text" name="score2"></td>
+                                <td><input type="text" name="marks2" disabled></td>
                             </tr>
                             <tr>
                                 <td>3. Key Metrics</td>
-                                <td>{{ $criteria3 }}</td>
+                                <td><input type="text" name="weight3" value="1" disabled></td>
+                                <td><input type="text" name="score3"></td>
+                                <td><input type="text" name="marks3" disabled></td>
                             </tr>
                             <tr>
                                 <td>4. Unique Value Proposition</td>
-                                <td>{{ $criteria4 }}</td>
+                                <td><input type="text" name="weight4" value="1" disabled></td>
+                                <td><input type="text" name="score4"></td>
+                                <td><input type="text" name="marks4" disabled></td>
                             </tr>
                             <tr>
                                 <td>5. Unfair Advantage</td>
-                                <td>{{ $criteria5 }}</td>
+                                <td><input type="text" name="weight5" value="1" disabled></td>
+                                <td><input type="text" name="score5"></td>
+                                <td><input type="text" name="marks5" disabled></td>
                             </tr>
                             <tr>
                                 <td>6. Channels</td>
-                                <td>{{ $criteria6 }}</td>
+                                <td><input type="text" name="weight6" value="1" disabled></td>
+                                <td><input type="text" name="score6"></td>
+                                <td><input type="text" name="marks6" disabled></td>
                             </tr>
                             <tr>
                                 <td>7. Customer Segments</td>
-                                <td>{{ $criteria7 }}</td>
+                                <td><input type="text" name="weight7" value="1" disabled></td>
+                                <td><input type="text" name="score7"></td>
+                                <td><input type="text" name="marks7" disabled></td>
                             </tr>
                             <tr>
                                 <td>8. Cost Structure</td>
-                                <td>{{ $criteria8 }}</td>
+                                <td><input type="text" name="weight8" value="1" disabled></td>
+                                <td><input type="text" name="score8"></td>
+                                <td><input type="text" name="marks8" disabled></td>
                             </tr>
                             <tr>
                                 <td>9. Revenue Streams</td>
-                                <td>{{ $criteria9 }}</td>
+                                <td><input type="text" name="weight9" value="1" disabled></td>
+                                <td><input type="text" name="score9"></td>
+                                <td><input type="text" name="marks9" disabled></td>
                             </tr>
-
+                            <tr>
+                                <td colspan="2">Total</td>
+                                <td><input type="button" value="Compute" class="btn btn-success" onclick="javascript:computef13();"></td>
+                                <td><input type="text" name="total" disabled></td>
+                            </tr>
                         </table>
-                        
                         <div class="form-group mb-3">
                             <label for="">Marks</label>
                             <input type="text" name="f13" value="{{$student->f13}}" class="form-control">

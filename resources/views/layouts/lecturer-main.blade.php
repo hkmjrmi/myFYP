@@ -66,6 +66,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('vendors/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('vendors/dist/js/adminlte.min.js')}}"></script>
+
+<!--DataTable-->
 <script>
  $(document).ready(function() {
     $('#student').DataTable( {
@@ -103,12 +105,6 @@ $(document).ready(function() {
         lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']],
         buttons: [
             {
-                extend: 'copyHtml5',
-                exportOptions: {
-                    columns: [ 0, ':visible' ]
-                }
-            },
-            {
                 extend: 'excelHtml5',
                 exportOptions: {
                     columns: ':visible'
@@ -126,26 +122,53 @@ $(document).ready(function() {
 } );
 
 $(document).ready(function() {
-    $('#f3').DataTable( {
+    $('#f2').DataTable( {
         dom: 'Bfrtip',
         buttons: [
             {
-                extend: 'copyHtml5',
-                exportOptions: {
-                    columns: [ 0, ':visible' ]
-                }
-            },
-            {
                 extend: 'excelHtml5',
+                title: 'F2 Marks List',
+                filename: 'F2_List',
                 exportOptions: {
-                    columns: ':visible'
+                    columns: [0, 2, 4, ]
                 }
             },
             {
                 extend: 'pdfHtml5',
+                title: 'F2 Marks List',
+                filename: 'F2_List',
+                orientation: 'potrait',
+                pageSize: 'A4',
                 exportOptions: {
-                    columns: [2, 4, ]
+                    columns: [0, 2, 4, ]
+                },
+            },
+            'colvis'
+        ]
+    } );
+});
+
+$(document).ready(function() {
+    $('#f3').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                title: 'F3 Marks List',
+                filename: 'F3_List',
+                exportOptions: {
+                    columns: [0, 2, 4, ]
                 }
+            },
+            {
+                extend: 'pdfHtml5',
+                title: 'F3 Marks List',
+                filename: 'F3_List',
+                orientation: 'potrait',
+                pageSize: 'A4',
+                exportOptions: {
+                    columns: [0, 2, 4, ]
+                },
             },
             'colvis'
         ]
@@ -157,22 +180,22 @@ $(document).ready(function() {
         dom: 'Bfrtip',
         buttons: [
             {
-                extend: 'copyHtml5',
-                exportOptions: {
-                    columns: [ 0, ':visible' ]
-                }
-            },
-            {
                 extend: 'excelHtml5',
+                title: 'F4 Marks List',
+                filename: 'F4_List',
                 exportOptions: {
-                    columns: ':visible'
+                    columns: [0, 2, 4, ]
                 }
             },
             {
                 extend: 'pdfHtml5',
+                title: 'F4 Marks List',
+                filename: 'F4_List',
+                orientation: 'potrait',
+                pageSize: 'A4',
                 exportOptions: {
-                    columns: [2, 4, ]
-                }
+                    columns: [0, 2, 4, ]
+                },
             },
             'colvis'
         ]
@@ -184,27 +207,28 @@ $(document).ready(function() {
         dom: 'Bfrtip',
         buttons: [
             {
-                extend: 'copyHtml5',
-                exportOptions: {
-                    columns: [ 0, ':visible' ]
-                }
-            },
-            {
                 extend: 'excelHtml5',
+                title: 'F13 Marks List',
+                filename: 'F13_List',
                 exportOptions: {
-                    columns: ':visible'
+                    columns: [0, 2, 4, ]
                 }
             },
             {
                 extend: 'pdfHtml5',
+                title: 'F13 Marks List',
+                filename: 'F13_List',
+                orientation: 'potrait',
+                pageSize: 'A4',
                 exportOptions: {
-                    columns: [2, 4, ]
-                }
+                    columns: [0, 2, 4, ]
+                },
             },
             'colvis'
         ]
     } );
-} );
+});
+
 $(document).ready(function(){
     $('#assignment').DataTable();
 })
@@ -219,29 +243,116 @@ $(document).ready(function(){
 
     // F2
     function computef2(){
-    
-    s1=Number(document.calculator.score1.value);
-    w1=Number(document.calculator.weight1.value);
-    s2=Number(document.calculator.score2.value);
-    w2=Number(document.calculator.weight2.value);
-    s3=Number(document.calculator.score3.value);
-    w3=Number(document.calculator.weight3.value);
+        s1=Number(document.calculator.score1.value);
+        w1=Number(document.calculator.weight1.value);
+        s2=Number(document.calculator.score2.value);
+        w2=Number(document.calculator.weight2.value);
+        s3=Number(document.calculator.score3.value);
+        w3=Number(document.calculator.weight3.value);
 
-    m1=s1*w1;
-    m2=s2*w2;
-    m3=s3*w3;
+        m1=s1*w1;
+        m2=s2*w2;
+        m3=s3*w3;
 
-    total = m1 + m2+ m3;
-    
-    document.calculator.marks1.value=m1;
-    document.calculator.marks2.value=m2;
-    document.calculator.marks3.value=m3;
-    document.calculator.total.value=total;
-    document.calculator.f2.value=total;
-    
+        total = m1 + m2+ m3;
+        
+        document.calculator.marks1.value=m1;
+        document.calculator.marks2.value=m2;
+        document.calculator.marks3.value=m3;
+        document.calculator.total.value=total;
+        document.calculator.f2.value=total;
     }
 
     //F3
+    function computef3(){
+        s1=Number(document.calculator.score1.value);
+        w1=Number(document.calculator.weight1.value);
+        s2=Number(document.calculator.score2.value);
+        w2=Number(document.calculator.weight2.value);
+        s3=Number(document.calculator.score3.value);
+        w3=Number(document.calculator.weight3.value);
+
+        m1=s1*w1;
+        m2=s2*w2;
+        m3=s3*w3;
+
+        total = m1 + m2+ m3;
+        
+        document.calculator.marks1.value=m1;
+        document.calculator.marks2.value=m2;
+        document.calculator.marks3.value=m3;
+        document.calculator.total.value=total;
+        document.calculator.f3.value=total;
+    }
+
+     //F4
+     function computef4(){
+        s1=Number(document.calculator.score1.value);
+        w1=Number(document.calculator.weight1.value);
+        s2=Number(document.calculator.score2.value);
+        w2=Number(document.calculator.weight2.value);
+        s3=Number(document.calculator.score3.value);
+        w3=Number(document.calculator.weight3.value);
+
+        m1=s1*w1;
+        m2=s2*w2;
+        m3=s3*w3;
+
+        total = m1 + m2+ m3;
+        
+        document.calculator.marks1.value=m1;
+        document.calculator.marks2.value=m2;
+        document.calculator.marks3.value=m3;
+        document.calculator.total.value=total;
+        document.calculator.f4.value=total;
+    }
+
+    //F13
+    function computef13(){
+        s1=Number(document.calculator.score1.value);
+        w1=Number(document.calculator.weight1.value);
+        s2=Number(document.calculator.score2.value);
+        w2=Number(document.calculator.weight2.value);
+        s3=Number(document.calculator.score3.value);
+        w3=Number(document.calculator.weight3.value);
+        s4=Number(document.calculator.score4.value);
+        w4=Number(document.calculator.weight4.value);
+        s5=Number(document.calculator.score5.value);
+        w5=Number(document.calculator.weight5.value);
+        s6=Number(document.calculator.score6.value);
+        w6=Number(document.calculator.weight6.value);
+        s7=Number(document.calculator.score7.value);
+        w7=Number(document.calculator.weight7.value);
+        s8=Number(document.calculator.score8.value);
+        w8=Number(document.calculator.weight8.value);
+        s9=Number(document.calculator.score9.value);
+        w9=Number(document.calculator.weight9.value);
+
+        m1=s1*w1;
+        m2=s2*w2;
+        m3=s3*w3;
+        m4=s4*w4;
+        m5=s5*w5;
+        m6=s6*w6;
+        m7=s7*w7;
+        m8=s8*w8;
+        m9=s9*w9;
+
+        total = m1 + m2 + m3 + m4 + m5 + m6 + m7 + m8 + m9;
+        
+        document.calculator.marks1.value=m1;
+        document.calculator.marks2.value=m2;
+        document.calculator.marks3.value=m3;
+        document.calculator.marks4.value=m4;
+        document.calculator.marks5.value=m5;
+        document.calculator.marks6.value=m6;
+        document.calculator.marks7.value=m7;
+        document.calculator.marks8.value=m8;
+        document.calculator.marks9.value=m9;
+        document.calculator.total.value=total;
+        document.calculator.f13.value=total;
+    }
+
 
 </script>
 

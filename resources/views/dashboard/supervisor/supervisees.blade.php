@@ -32,7 +32,7 @@
                         <th>Student ID</th>
                         <th>Email</th>
                         <th>Project Title</th>
-                        <th>Action</th>
+                        <th colspan="2" style="align-content: center">Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -46,6 +46,9 @@
                         <td>
                             <a href="{{ url('supervisor/progress/'.$student->id) }}"><button class="btn btn-success">Progress</button></a>
                             <!--<a href="{{ url('supervisor/activities/'.$student->id) }}"><button class="btn btn-info">Activity</button></a>-->
+                        </td>
+                        <td>
+                            <a href="{{ url('supervisor/activities/'.$student->id) }}"><button class="btn btn-warning">Activity</button></a>
                         </td>
                     </tr>
                     @endforeach

@@ -45,7 +45,7 @@
                     <div class="icon">
                         <i class="ion-ios-person"></i>
                     </div>
-                    <a href="{{ url('student/assignments') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="{{ url('student/supervisor') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

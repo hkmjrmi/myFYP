@@ -88,7 +88,7 @@
                         </table>
                         <div class="form-group mb-3"> 
                             <label for="">Marks</label>
-                            <input type="text" name="f2" value="{{ $student->f2 }}" class="form-control">
+                            <input type="text" name="f3" value="{{ $student->f3 }}" class="form-control">
                         </div>
                         <div class="float-right">
                         <div class="form-group mb-3">

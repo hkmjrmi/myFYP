@@ -29,7 +29,7 @@
             @if (session('status'))
               <h6 class="alert alert-success">{{ session('status') }}</h6>
             @endif
-            <table id="form" class="table table-bordered">
+            <table id="f2" class="table table-bordered">
                 <thead>
                     <tr>
                         <th>No</th>
