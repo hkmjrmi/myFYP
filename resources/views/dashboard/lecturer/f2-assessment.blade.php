@@ -11,8 +11,25 @@
                 <div class="card-header">
                     <h4 class="m-0 font-weight-bold text-primary">F2 - PROJECT MOTIVATION FORM</h4>            
                 </div>
+                <!--
                 <div class="card-body">
-                    <form action="{{ url('/lecturer/update-f2/'.$student->id) }}" method="POST">
+                    <form name="calculator">
+                        Input 1: <input type="text" name="first"><br><br>
+                        Input 2: <input type="text" name="second"><br>
+                        <hr>
+                        <input type="button" value="ADD" onclick="javascript:addition();">
+                        <input type="button" value="SUB" onclick="javascript:subtraction();">
+                        <input type="button" value="MUL" onclick="javascript:multiply();">
+                        <input type="button" value="DIV" onclick="javascript:division();">
+                        <input type="button" value="MOD" onclick="javascript:modulus();">
+                        <hr>
+                        Output: <input type="text" name="total">
+                        <hr>
+                    </form>
+                </div>
+                !-->
+                <div class="card-body">
+                    <form name="calculator" action="{{ url('/lecturer/update-f2/'.$student->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <table class="table table-bordered">
@@ -35,33 +52,43 @@
                                 <td colspan="3">{{ $student->project}}</td>
                             </tr>
                         </table>
-                        <br>
-                        @php
-                            $problem = 3;
-                            $evidences = 5;
-                            $solution = 2;
-                        @endphp
                         <table class="table table-bordered">
                             <tr>
                                 <th>Assessment Criteria</th>
                                 <th>Weight</th>
+                                <th>Score</th>
+                                <th>Marks</th>
                             </tr>
                             <tr>
                                 <td>1. Problem identification (Identify problems/issues/opportunities)</td>
-                                <td>{{ $problem }}</td>
+                                <td><input type="text" name="weight1" value="3" disabled></td>
+                                <td><input type="text" name="score1"></td>
+                                <td><input type="text" name="marks1" disabled></td>
+                                
                             </tr>
                             <tr>
                                 <td>2. Evidences (Evidences to support problems/issues/opportunities identified.)</td>
-                                <td>{{ $evidences }}</td>
+                                <td><input type="text" name="weight2" value="5" disabled></td>
+                                <td><input type="text" name="score2"></td>
+                                <td><input type="text" name="marks2" disabled></td>
+                                
                             </tr>
                             <tr>
                                 <td>3. Solutions (Propose solutions.)</td>
-                                <td>{{ $solution }}</td>
+                                <td><input type="text" name="weight3" value="2" disabled></td>
+                                <td><input type="text" name="score3"></td>
+                                <td><input type="text" name="marks3" disabled></td>
+                            </tr>
+                            <tr>
+
+                                <td colspan="2">Total</td>
+                                <td><input type="button" value="Compute" class="btn btn-success" onclick="javascript:computef2();"></td>
+                                <td><input type="text" name="total" disabled></td>
                             </tr>
                         </table>
-                        <div class="form-group mb-3">
+                        <div class="form-group mb-3"> 
                             <label for="">Marks</label>
-                            <input type="text" name="f2" value="{{$student->f2}}" class="form-control">
+                            <input type="text" name="f2" value="{{ $student->f2 }}" class="form-control">
                         </div>
                         <div class="float-right">
                         <div class="form-group mb-3">

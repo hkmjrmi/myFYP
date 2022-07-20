@@ -147,7 +147,7 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
          Route::get('/forms/f1',[LecturerController::class,'viewStudentF1']);
          Route::get('/f1-assessment/{id}', [StudentController::class, 'editF1']);
          Route::put('/update-f1/{id}', [StudentController::class, 'updateF1']);
-         Route::get('/forms/f2',[LecturerController::class,'viewStudentF2']);
+         Route::get('/forms/f2',[LecturerController::class,'viewStudentF2'])->name('f2list');
          Route::get('/f2-assessment/{id}', [StudentController::class, 'editF2']);
          Route::put('/update-f2/{id}', [StudentController::class, 'updateF2']);
          Route::get('/forms/f3',[LecturerController::class,'viewStudentF3']);

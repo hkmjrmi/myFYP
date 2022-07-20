@@ -212,8 +212,38 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('#form-list').DataTable();
 })
+</script>
 
+<!--Assessment Algorithm-->
+<script type="text/javascript">
+
+    // F2
+    function computef2(){
+    
+    s1=Number(document.calculator.score1.value);
+    w1=Number(document.calculator.weight1.value);
+    s2=Number(document.calculator.score2.value);
+    w2=Number(document.calculator.weight2.value);
+    s3=Number(document.calculator.score3.value);
+    w3=Number(document.calculator.weight3.value);
+
+    m1=s1*w1;
+    m2=s2*w2;
+    m3=s3*w3;
+
+    total = m1 + m2+ m3;
+    
+    document.calculator.marks1.value=m1;
+    document.calculator.marks2.value=m2;
+    document.calculator.marks3.value=m3;
+    document.calculator.total.value=total;
+    document.calculator.f2.value=total;
+    
+    }
+
+    //F3
 
 </script>
+
 </body>
 </html>
