@@ -34,11 +34,11 @@ class CreateStudentsTable extends Migration
             $table->longText('chapter3_url')->nullable();
             $table->longText('chapter4_url')->nullable();
             $table->longText('chapter5_url')->nullable();
-            $table->string('f2')->nullable()->default("Not Yet Marked");
-            $table->string('f3')->nullable()->default("Not Yet Marked");
-            $table->string('f4')->nullable()->default("Not Yet Marked");
-            $table->string('f5')->nullable()->default("Not Yet Marked");
-            $table->string('f13')->nullable()->default("Not Yet Marked");
+            $table->string('f2')->nullable()->default("Unmarked");
+            $table->string('f3')->nullable()->default("Unmarked");
+            $table->string('f4')->nullable()->default("Unmarked");
+            $table->string('f5')->nullable()->default("Unmarked");
+            $table->string('f13')->nullable()->default("Unmarked");
             $table->rememberToken();
             $table->timestamps();
         });

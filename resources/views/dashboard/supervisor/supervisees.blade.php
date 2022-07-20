@@ -32,7 +32,7 @@
                         <th>Student ID</th>
                         <th>Email</th>
                         <th>Project Title</th>
-                        <th colspan="2" style="align-content: center">Action</th>
+                        <th colspan="2" style="text-align: center">Action</th>
                     </tr>
                     </thead>
                     <tbody>
