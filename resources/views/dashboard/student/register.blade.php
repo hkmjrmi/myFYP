@@ -35,6 +35,21 @@
                         <input type="text" class="form-control" name="student_id" placeholder="Enter Student ID" value="{{ old('student_id') }}">
                         <span class="text-danger">@error('student_id'){{ $message }}@enderror</span>
                     </div>
+                    <div class="form-group">
+                        <label for="lecturer_id">lecturer</label>
+                        <input type="text" class="form-control" name="lecturer_id" placeholder="Enter Lecturer ID" value="{{ old('lecturer_id') }}">
+                        <span class="text-danger">@error('lecturer_id'){{ $message }}@enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="supervisor_id">Supervisor</label>
+                        <input type="text" class="form-control" name="supervisor_id" placeholder="Enter Supervisor ID" value="{{ old('supervisor_id') }}">
+                        <span class="text-danger">@error('supervisor_id'){{ $message }}@enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="project">Project</label>
+                        <input type="text" class="form-control" name="project" placeholder="Enter Project Title" value="{{ old('project') }}">
+                        <span class="text-danger">@error('project'){{ $message }}@enderror</span>
+                    </div>
                      <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">

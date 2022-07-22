@@ -18,6 +18,7 @@ class LecturerController extends Controller
         //Validate inputs
         $request->validate([
            'name'=>'required',
+           'lecturer_id' => 'required|unique:lecturers',
            'email'=>'required|email|unique:lecturers,email',
            'password'=>'required|min:5|max:30',
            'cpassword'=>'required|min:5|max:30|same:password'
@@ -27,8 +28,8 @@ class LecturerController extends Controller
         $lecturer->name = $request->name;
         $lecturer->lecturer_id = $request->lecturer_id;
         $lecturer->email = $request->email;
-        $lecturer->phone = $request->default;
-        $lecturer->office = $request->default;
+        $lecturer->phone = $request->phone;
+        $lecturer->office = $request->office;
         $lecturer->password = Hash::make($request->password);
         $save = $lecturer->save();
 

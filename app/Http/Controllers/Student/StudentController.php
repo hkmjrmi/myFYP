@@ -27,6 +27,9 @@ class StudentController extends Controller
           $request->validate([
              'name'=>'required',
              'student_id' =>'required|unique:students',
+             'lecturer_id' =>'required',
+             'supervisor_id' =>'required',
+             'project' => 'required',
              'email'=>'required|email|unique:students,email',
              'password'=>'required|min:5|max:30',
              'cpassword'=>'required|min:5|max:30|same:password'
@@ -35,6 +38,9 @@ class StudentController extends Controller
           $student = new student();
           $student->name = $request->name;
           $student->student_id = $request->student_id;
+          $student->lecturer_id = $request->lecturer_id;
+          $student->supervisor_id = $request->supervisor_id;
+          $student->project = $request->project;
           $student->email = $request->email;
           $student->password = Hash::make($request->password);
           $save = $student->save();

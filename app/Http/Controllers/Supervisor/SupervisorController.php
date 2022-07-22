@@ -15,14 +15,20 @@ class SupervisorController extends Controller
         //Validate inputs
         $request->validate([
            'name'=>'required',
+           'supervisor_id' =>'required|unique:supervisors',
            'email'=>'required|email|unique:supervisors,email',
+           'phone'=>'required',
+           'office' => 'required',
            'password'=>'required|min:5|max:30',
            'cpassword'=>'required|min:5|max:30|same:password'
         ]);
 
         $supervisor = new Supervisor();
         $supervisor->name = $request->name;
+        $supervisor->supervisor_id = $request->supervisor_id;
         $supervisor->email = $request->email;
+        $supervisor->phone = $request->phone;
+        $supervisor->office = $request->office;
         $supervisor->password = Hash::make($request->password);
         $save = $supervisor->save();
 

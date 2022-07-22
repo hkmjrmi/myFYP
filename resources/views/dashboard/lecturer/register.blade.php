@@ -40,6 +40,16 @@
                         <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
                         <span class="text-danger">@error('email'){{ $message }}@enderror</span>
                     </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" name="phone" placeholder="Enter contact number" value="{{ old('phone') }}">
+                        <span class="text-danger">@error('phone'){{ $message }}@enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="office">Office</label>
+                        <input type="text" class="form-control" name="office" placeholder="Enter office/room name" value="{{ old('office') }}">
+                        <span class="text-danger">@error('phone'){{ $message }}@enderror</span>
+                    </div>
                      <div class="form-group">
                          <label for="password">Password</label>
                          <input type="password" class="form-control" name="password" placeholder="Enter password" value="{{ old('password') }}">

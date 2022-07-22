@@ -31,9 +31,24 @@
                          <span class="text-danger">@error('name'){{ $message }}@enderror</span>
                      </div>
                      <div class="form-group">
+                        <label for="supervisor_id">Supervisor ID</label>
+                        <input type="text" class="form-control" name="supervisor_id" placeholder="Enter Supervisor ID" value="{{ old('supervisor_id') }}">
+                        <span class="text-danger">@error('supervisor_id'){{ $message }}@enderror</span>
+                    </div>
+                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="text" class="form-control" name="email" placeholder="Enter email address" value="{{ old('email') }}">
                         <span class="text-danger">@error('email'){{ $message }}@enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" name="phone" placeholder="Enter contact number" value="{{ old('phone') }}">
+                        <span class="text-danger">@error('phone'){{ $message }}@enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="office">Office</label>
+                        <input type="text" class="form-control" name="office" placeholder="Enter office/room name" value="{{ old('office') }}">
+                        <span class="text-danger">@error('phone'){{ $message }}@enderror</span>
                     </div>
                      <div class="form-group">
                          <label for="password">Password</label>
