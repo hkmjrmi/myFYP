@@ -6,6 +6,7 @@ use App\Models\Student;
 use App\Models\Lecturer;
 use App\Models\Assignment;
 use Illuminate\Http\Request;
+use App\Exports\LecturerExport;
 use App\Imports\LecturersImport;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -128,6 +129,14 @@ class LecturerController extends Controller
         Excel::import(new LecturersImport,request()->file('file'));
              
         return redirect()->back()->with('message', 'Data Successfully Imported!');
+    }
+
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function export() 
+    {
+        return Excel::download(new LecturerExport, 'lecturers.csv');
     }
 
 

@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Supervisor;
 use App\Models\Student;
 use App\Models\Supervisor;
 use Illuminate\Http\Request;
+use App\Exports\SupervisorExport;
+use App\Imports\SupervisorImport;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SupervisorController extends Controller
 {
@@ -83,5 +86,37 @@ class SupervisorController extends Controller
     $students = Student::with('supervisor')->where('supervisor_id',$supervisor)->get();
     return view('dashboard.supervisor.form', compact('students'));
   }
+
+  public function index()
+  {
+    $supervisors = Supervisor::all();
+
+    return view('importSupervisor', compact('supervisors'));
+  }
+
+  /**
+  * @return \Illuminate\Support\Collection
+  */
+  public function importExportView()
+  {
+    return view('importSupervisor');
+  }
+
+  /**
+  * @return \Illuminate\Support\Collection
+  */
+  public function import() 
+  {
+    Excel::import(new SupervisorImport,request()->file('file'));  
+    return redirect()->back()->with('message', 'Data Successfully Imported!');
+  }
+
+  /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function export() 
+    {
+        return Excel::download(new SupervisorExport, 'supervisors.csv');
+    }
 
 }

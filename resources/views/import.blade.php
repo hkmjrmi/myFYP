@@ -16,8 +16,8 @@
                 @csrf
                 <input type="file" name="file" class="form-control">
                 <br>
-                <button class="btn btn-success">Import User Data</button>
-                <a class="btn btn-warning" href="{{ route('admin.export') }}">Export User Data</a>
+                <button class="btn btn-success">Import Student Data</button>
+                <a class="btn btn-warning" href="{{ route('admin.studentExport') }}">Export Student Data</a>
             </form>
         </div>
     </div>

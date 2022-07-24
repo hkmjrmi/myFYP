@@ -16,8 +16,8 @@
                 @csrf
                 <input type="file" name="file" class="form-control">
                 <br>
-                <button class="btn btn-success">Import Lecturer Data</button>
-                <a class="btn btn-warning" href="{{ route('admin.lecturerExport') }}">Export Lecturer Data</a>
+                <button class="btn btn-success">Import Supervisor Data</button>
+                <a class="btn btn-warning" href="{{ route('admin.supervisorExport') }}">Export Supervisor Data</a>
             </form>
         </div>
     </div>
@@ -31,21 +31,21 @@
             <tr>
                 <th>No</th>
                 <th>Name</th>
-                <th>Lecturer ID</th>
+                <th>Supervisor ID</th>
                 <th>Email</th> 
                 <th>Phone</th>
                 <th>Office</th>
             </tr>
             </thead>
             <tbody>
-                @foreach ($lecturers as $lecturer)
+                @foreach ($supervisors as $supervisor)
                 <tr>
                     <td scope="row">{{ $loop->iteration }}</td>
-                    <td>{{ $lecturer->name }}</td>
-                    <td>{{ $lecturer->lecturer_id }}</td>
-                    <td>{{ $lecturer->email }}</td>
-                    <td>{{ $lecturer->phone }}</td>
-                    <td>{{ $lecturer->office }}</td>
+                    <td>{{ $supervisor->name }}</td>
+                    <td>{{ $supervisor->supervisor_id }}</td>
+                    <td>{{ $supervisor->email }}</td>
+                    <td>{{ $supervisor->phone }}</td>
+                    <td>{{ $supervisor->office }}</td>
                 </tr>
                 @endforeach
             </tbody>
@@ -53,7 +53,7 @@
             <tr>
                 <th>No</th>
                 <th>Name</th>
-                <th>Lecturer ID</th>
+                <th>Supervisor ID</th>
                 <th>Email</th> 
                 <th>Phone</th>
                 <th>Office</th>
