@@ -67,7 +67,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">Total</td>
-                                <td><input type="button" value="Compute" class="btn btn-success" onclick="javascript:computef4();"></td>
+                                <td><input type="button" value="Compute" class="btn btn-success" onclick="javascript:computef3();"></td>
                                 <td><input type="text" name="total" disabled></td>
                             </tr>
                         </table>

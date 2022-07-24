@@ -158,6 +158,8 @@ Route::prefix('lecturer')->name('lecturer.')->group(function(){
     Route::middleware(['auth:lecturer','PreventBackHistory'])->group(function(){
          Route::resource('assignments', AssignmentController::class);
          Route::view('/home','dashboard.lecturer.home')->name('home');
+         Route::get('/editProfile',[LecturerController::class,'editProfile'])->name('editProfile');
+         Route::put('/updateProfile/{id}', [LecturerController::class, 'updateProfile']);
          Route::get('/students',[LecturerController::class,'viewStudent']);
          Route::get('/edit-student/{id}', [StudentController::class, 'edit']);
          Route::put('/update-student/{id}', [StudentController::class, 'update']);

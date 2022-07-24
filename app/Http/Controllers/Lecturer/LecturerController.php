@@ -59,6 +59,23 @@ class LecturerController extends Controller
       }
   }
 
+public function editProfile(){
+    if(Auth::user()){
+        $lecturer = Lecturer::find(Auth::user()->id);
+
+        return view('dashboard.lecturer.editProfile', compact('lecturer'));
+        
+    }
+}
+
+public function updateProfile(Request $request, $id)
+{
+    $lecturer = lecturer::find($id);
+    $lecturer->office = $request->input('office');
+    $lecturer->update();
+    return redirect()->route('lecturer.home')->with('status','Lecturer Updated Successfully');
+}
+
   function logout(){
       Auth::guard('lecturer')->logout();
       return redirect('/');

@@ -73,6 +73,7 @@
                         <th>Email</th>
                         <th>Contact</th>
                         <th>Office</th>
+                        <th>Action</th>
                     </tr>
                     <tr>
                         <td scope="row">{{ Auth::guard('lecturer')->user()->name }}</td>
@@ -80,6 +81,7 @@
                         <td>{{ Auth::guard('lecturer')->user()->email }}</td>
                         <td>{{ Auth::guard('lecturer')->user()->phone }}</td>
                         <td>{{ Auth::guard('lecturer')->user()->office }}</td>
+                        <td><a href= {{url('/lecturer/editProfile')  }} class="btn btn-warning">Update</a></td>
                     </tr>
                 </table>
             </div>

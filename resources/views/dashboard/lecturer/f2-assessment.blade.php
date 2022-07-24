@@ -56,7 +56,7 @@
                             <tr>
                                 <th>Assessment Criteria</th>
                                 <th>Weight</th>
-                                <th>Score</th>
+                                <th>Score (1-10)</th>
                                 <th>Marks</th>
                             </tr>
                             <tr>
@@ -88,7 +88,7 @@
                         </table>
                         <div class="form-group mb-3"> 
                             <label for="">Marks</label>
-                            <input type="text" name="f3" value="{{ $student->f3 }}" class="form-control">
+                            <input type="text" name="f2" value="{{ $student->f2 }}" class="form-control">
                         </div>
                         <div class="float-right">
                         <div class="form-group mb-3">
