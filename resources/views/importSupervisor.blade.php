@@ -4,7 +4,7 @@
     <br>
     <div class="card bg-light mt-3">
         <div class="card-header">
-            <h2 class="m-0 font-weight-bold text-primary">Lecturer Import Export</h2>
+            <h2 class="m-0 font-weight-bold text-primary">Supervisor Import Export</h2>
         </div>
         @if(session()->has('message'))
             <div class="alert alert-success">
@@ -12,7 +12,7 @@
             </div>
         @endif
         <div class="card-body">
-            <form action="{{ route('admin.import') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.importSupervisor') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="file" class="form-control">
                 <br>

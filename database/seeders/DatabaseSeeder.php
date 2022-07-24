@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\Admin::factory(1)->create();
-        \App\Models\Supervisor::factory(10)->create();
-        \App\Models\Lecturer::factory(1)->create();
+        //\App\Models\Supervisor::factory(10)->create();
+        //\App\Models\Lecturer::factory(1)->create();
 
         /*Student::create([
             'name' => 'Muhammad Abdul Hakim bin Jurimi',

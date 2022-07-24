@@ -106,7 +106,7 @@ class LecturerController extends Controller
     return view('dashboard.lecturer.f13', compact('students'));
   }
 
-    public function index()
+    public function indexLecturer()
     {
         $lecturers = Lecturer::all();
 

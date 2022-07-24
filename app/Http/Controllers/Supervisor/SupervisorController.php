@@ -87,7 +87,7 @@ class SupervisorController extends Controller
     return view('dashboard.supervisor.form', compact('students'));
   }
 
-  public function index()
+  public function indexSupervisor()
   {
     $supervisors = Supervisor::all();
 

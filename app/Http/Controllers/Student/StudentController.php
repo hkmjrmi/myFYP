@@ -15,7 +15,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class StudentController extends Controller
 {
-    public function index()
+    public function indexStudent()
     {
         $students = Student::all();
 
