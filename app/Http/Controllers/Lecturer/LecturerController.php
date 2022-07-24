@@ -47,7 +47,7 @@ class LecturerController extends Controller
          'email'=>'required|email|exists:lecturers,email',
          'password'=>'required|min:5|max:30'
       ],[
-          'email.exists'=>'This email is not exists in lecturers table'
+          'email.exists'=>'This email does not exists in Lecturers table'
       ]);
 
       $creds = $request->only('email','password');

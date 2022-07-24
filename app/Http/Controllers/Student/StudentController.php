@@ -46,9 +46,9 @@ class StudentController extends Controller
           $save = $student->save();
 
           if( $save ){
-              return redirect()->back()->with('success','You are now registered successfully as student');
+              return redirect()->back()->with('success','You are now registered successfully as student!');
           }else{
-              return redirect()->back()->with('fail','Something went Wrong, failed to register');
+              return redirect()->back()->with('fail','Something went wrong, failed to register');
           }
     }
 
@@ -58,7 +58,7 @@ class StudentController extends Controller
            'email'=>'required|email|exists:students,email',
            'password'=>'required|min:5|max:30'
         ],[
-            'email.exists'=>'This email is not exists in students table'
+            'email.exists'=>'This email is doest not exists in Students table'
         ]);
 
         $creds = $request->only('email','password');
@@ -106,6 +106,7 @@ class StudentController extends Controller
         $student->chapter5_url = $request->input('chapter5_url');
         $student->update();
         return redirect()->back()->with('status','Student Updated Successfully');
+        // return redirect()->route('student.assignments')->with('status','Assignment Uploaded Successfully');
     }
 
     function logout(){

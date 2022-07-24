@@ -24,7 +24,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's assignment and satisfy with the work! The assignment are ready to be evaluate. ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($receiver) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to( $receiver, '');
               $message->subject('myFYP Management Notification');
               
@@ -44,7 +44,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check your assignment and feel you need to update your work! Please update your work and resubmit.  ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to($email, '');
               $message->subject('myFYP Management Notification');
               
@@ -65,7 +65,7 @@ class SendEmailController extends Controller
           $body = "Your supervisee, $name with Student ID $id  have submitted assignment! You can review the assignment on myFYP Management System Website!";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to($email, '');
               $message->subject('myFYP Management Notification');
               
@@ -89,7 +89,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's Chapter 1 and satisfy with the work! The assignment are ready to be evaluate. ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($receiver) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to( $receiver, '');
               $message->subject('myFYP Management Notification');
               
@@ -109,7 +109,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's Chapter 1 and feel it requires some fixing! Please update the assignment and resubmit.  ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to($email, '');
               $message->subject('myFYP Management Notification');
               
@@ -133,7 +133,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's Chapter 2 and satisfy with the work! The assignment are ready to be evaluate. ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($receiver) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to( $receiver, '');
               $message->subject('myFYP Management Notification');
               
@@ -153,7 +153,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's Chapter 2 and feel it requires some fixing! Please update the assignment and resubmit.  ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to($email, '');
               $message->subject('myFYP Management Notification');
               
@@ -177,7 +177,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's Chapter 3 and satisfy with the work! The assignment are ready to be evaluate. ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($receiver) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to( $receiver, '');
               $message->subject('myFYP Management Notification');
               
@@ -197,7 +197,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's Chapter 3 and feel it requires some fixing! Please update the assignment and resubmit.  ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to($email, '');
               $message->subject('myFYP Management Notification');
               
@@ -221,7 +221,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's Chapter 4 and satisfy with the work! The assignment are ready to be evaluate. ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($receiver) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to( $receiver, '');
               $message->subject('myFYP Management Notification');
               
@@ -241,7 +241,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's Chapter 4 and feel it requires some fixing! Please update the assignment and resubmit.  ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to($email, '');
               $message->subject('myFYP Management Notification');
               
@@ -265,7 +265,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's Chapter 5 and satisfy with the work! The assignment are ready to be evaluate. ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($receiver) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to( $receiver, '');
               $message->subject('myFYP Management Notification');
               
@@ -285,7 +285,7 @@ class SendEmailController extends Controller
           $body = "$supervisor have check $student_id  $name's Chapter 5 and feel it requires some fixing! Please update the assignment and resubmit.  ";
 
           Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
-              $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
+              $message->from('myfypmanagement2022@gmail.com', 'MyFYP Management System');
               $message->to($email, '');
               $message->subject('myFYP Management Notification');
               
