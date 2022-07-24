@@ -67,6 +67,24 @@ class SupervisorController extends Controller
       return redirect('/');
   }
 
+  public function editSupervisor($id)
+  {
+      $supervisor = supervisor::find($id);
+      return view('dashboard.admin.editSupervisor', compact('supervisor'));
+  }
+
+  public function updateSupervisor(Request $request, $id)
+  {
+      $supervisor = supervisor::find($id);
+      $supervisor->name = $request->input('name');
+      $supervisor->email = $request->input('email');
+      $supervisor->phone = $request->input('phone');
+      $supervisor->office = $request->input('office');
+    
+      $supervisor->update();
+      return redirect()->back()->with('status','Supervisor Updated Successfully');
+  }
+
   public function view(){
 
     $supervisor = Auth::user()->id;

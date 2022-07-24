@@ -37,6 +37,7 @@
                 <th>Supervisor</th>
                 <th>Lecturer</th>
                 <th>Project</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -47,9 +48,10 @@
                 <td>{{ $student->student_id }}</td>
                 <td>{{ $student->email }}</td>
                 <td>{{ $student->password }}</td>
-                <td>{{ $student->supervisor_id }}</td>
-                <td>{{ $student->lecturer_id }}</td>
+                <td>{{ $student->supervisor->name }}</td>
+                <td>{{ $student->lecturer->name }}</td>
                 <td>{{ $student->project }}</td>
+                <td><a href= {{url('/admin/edit-student/'.$student->id)  }} class="btn btn-warning">Update</button></a></td>
             </tr>
             @endforeach
             </tbody>

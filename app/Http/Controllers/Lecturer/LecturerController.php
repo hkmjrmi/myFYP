@@ -71,6 +71,9 @@ public function editProfile(){
 public function updateProfile(Request $request, $id)
 {
     $lecturer = lecturer::find($id);
+    $lecturer->name = $request->input('name');
+    $lecturer->email = $request->input('email');
+    $lecturer->phone = $request->input('phone');
     $lecturer->office = $request->input('office');
     $lecturer->update();
     return redirect()->route('lecturer.home')->with('status','Lecturer Updated Successfully');
@@ -79,6 +82,24 @@ public function updateProfile(Request $request, $id)
   function logout(){
       Auth::guard('lecturer')->logout();
       return redirect('/');
+  }
+
+  public function editLecturer($id)
+  {
+      $lecturer= Lecturer::find($id);
+      return view('dashboard.admin.editLecturer', compact('lecturer'));
+  }
+
+  public function updateLecturer(Request $request, $id)
+  {
+      $lecturer = lecturer::find($id);
+      $lecturer->name = $request->input('name');
+      $lecturer->email = $request->input('email');
+      $lecturer->phone = $request->input('phone');
+      $lecturer->office = $request->input('office');
+    
+      $lecturer->update();
+      return redirect()->back()->with('status','Lecturer Updated Successfully');
   }
 
   public function viewStudent(){

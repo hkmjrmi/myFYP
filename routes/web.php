@@ -65,6 +65,12 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::get('importLecturer', [LecturerController::class, 'importExportView']);
         Route::get('importSupervisor', [SupervisorController::class, 'importExportView']);
         Route::get('importStudent', [StudentController::class, 'indexStudent']);
+        Route::get('/edit-student/{id}', [StudentController::class, 'editStudent']);
+        Route::put('/update-student/{id}', [StudentController::class, 'updateStudent']);
+        Route::get('/edit-lecturer/{id}', [LecturerController::class, 'editLecturer']);
+        Route::put('/update-lecturer/{id}', [LecturerController::class, 'updateLecturer']);
+        Route::get('/edit-supervisor/{id}', [SupervisorController::class, 'editSupervisor']);
+        Route::put('/update-supervisor/{id}', [SupervisorController::class, 'updateSupervisor']);
         Route::get('importLecturer', [LecturerController::class, 'indexLecturer']);
         Route::get('importSupervisor', [SupervisorController::class, 'indexSupervisor']);
         Route::get('StudentExport', [StudentController::class, 'export'])->name('studentExport');

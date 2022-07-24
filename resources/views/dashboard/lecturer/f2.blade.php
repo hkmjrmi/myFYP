@@ -48,7 +48,7 @@
                         <td>{{ $student->student_id}}</td>
                         <td>{{ $student->project }}</td>
                         <td>{{ $student->f2 }}</td>
-                        <td><a href="{{ url('lecturer/f2-assessment/'.$student->id) }}" class="btn btn-primary btn-sm">Grade</a>
+                        <td><a href="{{ url('lecturer/f2-assessment/'.$student->id) }}" class="btn btn-primary btn-sm">Grade</a> 
                             <a href="{{ $student->chapter1_url }}" target="_blank" class="btn btn-success btn-sm">View</a>
                         </td>
                     </tr>

@@ -1,4 +1,4 @@
-@extends('layouts.lecturer-main')
+@extends('layouts.main')
 @section('content')
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -8,8 +8,9 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{{ url('lecturer/home') }}">Home</a></li>
-            <li class="breadcrumb-item">Edit Profile</li>
+            <li class="breadcrumb-item"><a href="{{ url('admin/home') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ url('admin/importLecturer') }}">Lecturer List</a></li>
+            <li class="breadcrumb-item">Edit Lecturer</li>
         </ol>
         </div><!-- /.col -->
     </div><!-- /.row -->
@@ -22,14 +23,13 @@
             @if (session('status'))
                 <h6 class="alert alert-success">{{ session('status') }}</h6>
             @endif
-            <br>
 
             <div class="card">
                 <div class="card-header">
-                    <h2 class="text-primary font-weight-bold">Edit Profile</h2>
+                    <h2 class="text-primary font-weight-bold">Edit Lecturer</h2>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('/lecturer/updateProfile/'.$lecturer->id) }}" method="POST">
+                    <form action="{{ url('/admin/update-lecturer/'.$lecturer->id) }}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group mb-3">
@@ -49,9 +49,7 @@
                             <input type="text" name="office" value="{{$lecturer->office}}" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <div class="float-right">
-                                <button type="submit" class="btn btn-primary">Update Profile</button>
-                            </div>
+                            <button type="submit" class="btn btn-primary">Update Lecturer</button>
                         </div>
                     </form>
                 </div>

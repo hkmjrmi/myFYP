@@ -35,6 +35,7 @@
                 <th>Email</th> 
                 <th>Phone</th>
                 <th>Office</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -46,6 +47,7 @@
                     <td>{{ $lecturer->email }}</td>
                     <td>{{ $lecturer->phone }}</td>
                     <td>{{ $lecturer->office }}</td>
+                    <td><a href= {{url('/admin/edit-lecturer/'.$lecturer->id)  }} class="btn btn-warning">Update</button></a></td>
                 </tr>
                 @endforeach
             </tbody>
@@ -57,6 +59,7 @@
                 <th>Email</th> 
                 <th>Phone</th>
                 <th>Office</th>
+                <th>Action</th>  
             </tr>
             </tfoot>
           </table>

@@ -143,6 +143,24 @@ class StudentController extends Controller
         return view('dashboard.lecturer.edit', compact('student'));
     }
     
+    public function editStudent($id)
+    {
+        $student = Student::find($id);
+        return view('dashboard.admin.editStudent', compact('student'));
+    }
+
+    public function updateStudent(Request $request, $id)
+    {
+        $student = Student::find($id);
+        $student->name = $request->input('name');
+        $student->student_id= $request->input('student_id');
+        $student->email = $request->input('email');
+        $student->project = $request->input('project');
+        $student->lecturer_id = $request->input('lecturer_id');
+        $student->supervisor_id = $request->input('supervisor_id');
+        $student->update();
+        return redirect()->back()->with('status','Student Updated Successfully');
+    }
 
     public function editSupervisee($id)
     {

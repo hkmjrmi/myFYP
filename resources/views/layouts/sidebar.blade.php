@@ -33,19 +33,19 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="importLecturer" class="nav-link">
+          <a href="{{ url('admin/importLecturer')}}" class="nav-link">
             <i class="nav-icon fa fa-users"></i>
             <p>Import Lecturer</p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="importSupervisor" class="nav-link">
+          <a href="{{ url('admin/importSupervisor')}}" class="nav-link">
             <i class="nav-icon fa fa-users"></i>
             <p>Import Supervisor</p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="importStudent" class="nav-link">
+          <a href="{{ url('admin/importStudent')}}" class="nav-link">
             <i class="nav-icon fa fa-users"></i>
             <p>Import Student</p>
           </a>
