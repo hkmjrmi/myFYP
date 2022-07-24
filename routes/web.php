@@ -87,7 +87,9 @@ Route::prefix('student')->name('student.')->group(function(){
 
     Route::middleware(['auth:student','PreventBackHistory'])->group(function(){
          Route::resource('activities', ActivityController::class);
-         Route::get('/edit',[StudentController::class,'editURL'])->name('edit');
+         Route::get('/editProfile',[StudentController::class,'editProfile'])->name('editProfile');
+         Route::put('/updateProfile/{id}', [StudentController::class, 'updateProfile']);
+         Route::get('/upload',[StudentController::class,'editURL'])->name('upload');
          Route::put('/update/{id}', [StudentController::class, 'updateURL']);
          Route::get('/send-email',[SendEmailController::class,'studentNotification']);
          Route::view('/home','dashboard.student.home')->name('home');

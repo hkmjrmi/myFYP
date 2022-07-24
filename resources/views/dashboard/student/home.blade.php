@@ -55,6 +55,11 @@
             <div class="card-header py-3">
                 <h2 class="m-0 font-weight-bold text-primary">Student Profile</h2>
             </div>
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
             <br>
             <div class="card-body">
                 <div class="table-responsive">
@@ -66,6 +71,7 @@
                             <th>Project Title</th>
                             <th>Lecturer Name</th>
                             <th>Supervisor Name</th>
+                            <th>Action</th>
                         </tr>
                         <tr>
                             <td scope="row">{{ Auth::guard('student')->user()->name }}</td>
@@ -74,6 +80,7 @@
                             <td>{{ Auth::guard('student')->user()->project }}</td>
                             <td>{{ Auth::guard('student')->user()->supervisor->name }}</td>
                             <td>{{ Auth::guard('student')->user()->lecturer->name }}</td>
+                            <td><a href= {{url('/student/editProfile')  }} class="btn btn-warning">Update</button></a></td>
                         </tr>
                     </table>
                 </div>

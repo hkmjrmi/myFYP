@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="float-right">
-            <a href= {{url('/student/edit')  }} target="_blank"><button id="upload" class="btn btn-success" onclick="uploadFunction()">Upload</button></a>
+            <a href= {{url('/student/upload')  }} target="_blank"><button id="upload" class="btn btn-success" onclick="uploadFunction()">Upload</button></a>
             <a href="{{ url('student/send-email') }}"><button id="send" class="btn btn-warning" disabled>Send</button></a>
         </div>
     </div>

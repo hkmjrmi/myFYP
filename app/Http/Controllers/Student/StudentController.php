@@ -70,11 +70,28 @@ class StudentController extends Controller
         }
     }
 
+    public function editProfile(){
+        if(Auth::user()){
+            $student = Student::find(Auth::user()->id);
+
+            return view('dashboard.student.editProfile', compact('student'));
+            
+        }
+    }
+
+    public function updateProfile(Request $request, $id)
+    {
+        $student = Student::find($id);
+        $student->project = $request->input('project');
+        $student->update();
+        return redirect()->route('student.home')->with('status','Student Updated Successfully');
+    }
+
     public function editURL(){
         if(Auth::user()){
             $student = Student::find(Auth::user()->id);
 
-            return view('dashboard.student.edit', compact('student'));
+            return view('dashboard.student.upload', compact('student'));
             
         }
     }

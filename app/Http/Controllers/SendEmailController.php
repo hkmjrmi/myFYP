@@ -13,16 +13,19 @@ class SendEmailController extends Controller
      public function supervisorNotifyApproval($id){
 
           $student = Student::find($id);
-          $id = $student->id;
+          $name = $student->name;
+          $student_id = $student->student_id;
           $email = $student->email;
           $supervisor = $student->supervisor->name;
+          $lecturerEmail =  $student->lecturer->email;
+          $receiver = [$email,$lecturerEmail];
           
 
-          $body = "$supervisor have check your assignment and satisfy with your work! Your assignment are ready to be evaluate. ";
+          $body = "$supervisor have check $student_id  $name's assignment and satisfy with the work! The assignment are ready to be evaluate. ";
 
-          Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($email) {
+          Mail::send('emails.TestMail', ['body'=>$body], function ($message) use($receiver) {
               $message->from('m.hakimjurimi@gmail.com', 'MyFYP Management System');
-              $message->to($email, '');
+              $message->to( $receiver, '');
               $message->subject('myFYP Management Notification');
               
           });
