@@ -119,10 +119,20 @@ Route::prefix('supervisor')->name('supervisor.')->group(function(){
          Route::get('activities/{id}',[ActivityController::class, 'indexSupervisor']);
          Route::get('/activities-supervisee/{id}', [ActivityController::class, 'editActivity']);
          Route::put('/update-activity/{id}', [ActivityController::class, 'updateActivity']);
-         //
+         // Progress
          Route::get('progress/{id}',[StudentController::class, 'progress'])->name('progressSupervisor');
-         Route::get('/send-email-approval/{id}',[SendEmailController::class,'supervisorNotifyApproval']);
-         Route::get('/send-email-disapproval/{id}',[SendEmailController::class,'supervisorNotifyDisapproval']);
+         // Email Notification
+         Route::get('/send-email-approveC1/{id}',[SendEmailController::class,'supervisorApproveC1']);
+         Route::get('/send-email-disapproveC1/{id}',[SendEmailController::class,'supervisorDisapproveC1']);
+         Route::get('/send-email-approveC2/{id}',[SendEmailController::class,'supervisorApproveC2']);
+         Route::get('/send-email-disapproveC2/{id}',[SendEmailController::class,'supervisorDisapproveC2']);
+         Route::get('/send-email-approveC3/{id}',[SendEmailController::class,'supervisorApproveC3']);
+         Route::get('/send-email-disapproveC3/{id}',[SendEmailController::class,'supervisorDisapproveC3']);
+         Route::get('/send-email-approveC4/{id}',[SendEmailController::class,'supervisorApproveC4']);
+         Route::get('/send-email-disapproveC4/{id}',[SendEmailController::class,'supervisorDisapproveC4']);
+         Route::get('/send-email-approveC5/{id}',[SendEmailController::class,'supervisorApproveC5']);
+         Route::get('/send-email-disapproveC5/{id}',[SendEmailController::class,'supervisorDisapproveC5']);
+         //  Edit Supervisee Detail
          Route::get('/edit-supervisee/{id}', [StudentController::class, 'editSupervisee']);
          Route::put('/update-supervisee/{id}', [StudentController::class, 'updateSupervisee']);
          Route::get('/form',[SupervisorController::class,'form']);

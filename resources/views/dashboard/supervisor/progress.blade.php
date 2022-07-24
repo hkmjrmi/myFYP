@@ -67,9 +67,9 @@
                             <td>Chapter 1: Introduction</td>
                             <td><a href="{{ $student->chapter1_url }}" target="_blank" class="btn btn-success"><i class="fa fa-eye"> </i>
                                  View</a>
-                                <a href="{{ url('supervisor/send-email-approval/'.$student->id) }}"><button class="btn btn-primary"><i class="fa fa-envelope"> </i>
+                                <a href="{{ url('supervisor/send-email-approveC1/'.$student->id) }}"><button class="btn btn-primary"><i class="fa fa-envelope"> </i>
                                     Approve</button></a>
-                                <a href="{{ url('supervisor/send-email-disapproval/'.$student->id) }}"><button class="btn btn-danger"><i class="fa fa-envelope"> </i>
+                                <a href="{{ url('supervisor/send-email-disapproveC1/'.$student->id) }}"><button class="btn btn-danger"><i class="fa fa-envelope"> </i>
                                     Dissaprove</button></a>
                             </td>
                         </tr>
@@ -78,9 +78,9 @@
                             <td>Chapter 2: Literature Review</td>
                             <td><a href="{{ $student->chapter2_url }}" target="_blank" class="btn btn-success"><i class="fa fa-eye"> </i>
                                 View</a>
-                               <a href="{{ url('supervisor/send-email-approval/'.$student->id) }}"><button class="btn btn-primary"><i class="fa fa-envelope"> </i>
+                               <a href="{{ url('supervisor/send-email-approveC2/'.$student->id) }}"><button class="btn btn-primary"><i class="fa fa-envelope"> </i>
                                    Approve</button></a>
-                               <a href="{{ url('supervisor/send-email-disapproval/'.$student->id) }}"><button class="btn btn-danger"><i class="fa fa-envelope"> </i>
+                               <a href="{{ url('supervisor/send-email-disapproveC2/'.$student->id) }}"><button class="btn btn-danger"><i class="fa fa-envelope"> </i>
                                    Dissaprove</button></a>
                            </td>
                         </tr>
@@ -89,9 +89,9 @@
                             <td>Chapter 3: Methodology</td>
                             <td><a href="{{ $student->chapter3_url }}" target="_blank" class="btn btn-success"><i class="fa fa-eye"> </i>
                                 View</a>
-                               <a href="{{ url('supervisor/send-email-approval/'.$student->id) }}"><button class="btn btn-primary"><i class="fa fa-envelope"> </i>
+                               <a href="{{ url('supervisor/send-email-approveC3/'.$student->id) }}"><button class="btn btn-primary"><i class="fa fa-envelope"> </i>
                                    Approve</button></a>
-                               <a href="{{ url('supervisor/send-email-disapproval/'.$student->id) }}"><button class="btn btn-danger"><i class="fa fa-envelope"> </i>
+                               <a href="{{ url('supervisor/send-email-disapproveC3/'.$student->id) }}"><button class="btn btn-danger"><i class="fa fa-envelope"> </i>
                                    Dissaprove</button></a>
                            </td>
                         </tr>
@@ -100,9 +100,9 @@
                             <td>Chapter 4: Result and Finding</td>
                             <td><a href="{{ $student->chapter4_url }}" target="_blank" class="btn btn-success"><i class="fa fa-eye"> </i>
                                 View</a>
-                               <a href="{{ url('supervisor/send-email-approval/'.$student->id) }}"><button class="btn btn-primary"><i class="fa fa-envelope"> </i>
+                               <a href="{{ url('supervisor/send-email-approveC4/'.$student->id) }}"><button class="btn btn-primary"><i class="fa fa-envelope"> </i>
                                    Approve</button></a>
-                               <a href="{{ url('supervisor/send-email-disapproval/'.$student->id) }}"><button class="btn btn-danger"><i class="fa fa-envelope"> </i>
+                               <a href="{{ url('supervisor/send-email-disapproveC4/'.$student->id) }}"><button class="btn btn-danger"><i class="fa fa-envelope"> </i>
                                    Dissaprove</button></a>
                            </td>
                         </tr>
@@ -111,13 +111,12 @@
                             <td>Chapter 5: Conclusion</td>
                             <td><a href="{{ $student->chapter5_url }}" target="_blank" class="btn btn-success"><i class="fa fa-eye"> </i>
                                 View</a>
-                               <a href="{{ url('supervisor/send-email-approval/'.$student->id) }}"><button class="btn btn-primary"><i class="fa fa-envelope"> </i>
+                               <a href="{{ url('supervisor/send-email-approveC5/'.$student->id) }}"><button class="btn btn-primary"><i class="fa fa-envelope"> </i>
                                    Approve</button></a>
-                               <a href="{{ url('supervisor/send-email-disapproval/'.$student->id) }}"><button class="btn btn-danger"><i class="fa fa-envelope"> </i>
+                               <a href="{{ url('supervisor/send-email-disapproveC5/'.$student->id) }}"><button class="btn btn-danger"><i class="fa fa-envelope"> </i>
                                    Dissaprove</button></a>
                            </td>
                         </tr>
-                    
                     </tbody>
                 </table>
             </div>
